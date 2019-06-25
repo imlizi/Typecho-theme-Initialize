@@ -63,7 +63,7 @@
     </div>
 <?php endif; ?>
     <script src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/jquery/2.1.4/jquery.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js<?php else: ?>cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js<?php endif; ?>"></script>
-    <script src="https://<?php if ($this->options->cjCDN=='bc'): ?>cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js<?php elseif ($this->options->cjCDN =='cf'): ?>cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js<?php else: ?>><?php endif;?>"></script>
+    <script src="https://<?php if ($this->options->cjCDN=='bc'): ?>cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js<?php elseif ($this->options->cjCDN =='cf'): ?>cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js<?php else: ?>cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js<?php endif;?>"></script>
     <script src='<?php $this->options->themeUrl('js/notie.js') ?>'></script>
 <?php
 if ($this->options->PjaxOption): ?>
