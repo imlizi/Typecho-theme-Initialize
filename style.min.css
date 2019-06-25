@@ -968,6 +968,10 @@ div.code-toolbar > .toolbar a {
     border-top: 1px solid #eee
 }
 
+#comments.whisper{
+    margin: 20px;
+}
+
 .whisper .comment-list li.comment-parent {
     padding: 20px 10px;
     background: 0;

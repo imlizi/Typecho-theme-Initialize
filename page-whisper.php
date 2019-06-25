@@ -77,10 +77,8 @@ function threadedComments($comments, $options)
             </header>
             <article class="post">
                 <div class="post-content">
-                    <div class="post-content">
-                        <?php $this->content(); ?>
-                        <p><img src="<?php $this->options->themeUrl('images/sakurais.png');?>"></p>
-                    </div>
+                    <?php $this->content(); ?>
+                    <p><img src="<?php $this->options->themeUrl('images/sakurais.png');?>"></p>
                 </div>
                 <div id="comments" class="whisper<?php if ($this->user->pass('editor', true)): ?> permission<?php endif; ?>">
                     <?php $this->comments()->to($comments); ?>
