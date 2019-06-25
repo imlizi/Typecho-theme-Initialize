@@ -69,9 +69,7 @@
                             <a href="<?php $tags->permalink(); ?>" title="共<?php $tags->count(); ?>篇文章"><?php $tags->name(); ?></a>
                         <?php endwhile; ?>
                     <?php else: ?>
-                        <li>
                             <a>暂无标签</a>
-                        </li>
                     <?php endif; ?>
                 </div>
             </section>

@@ -279,9 +279,9 @@ function Postviews($archive)
 {
     $db = Typecho_Db::get();
     $cid = $archive->cid;
-    if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
-        $db->query('ALTER TABLE `' . $db->getPrefix() . 'contents` ADD `views` INT(10) DEFAULT 0;');
-    }
+//    if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
+//        $db->query('ALTER TABLE `' . $db->getPrefix() . 'contents` ADD `views` INT(10) DEFAULT 0;');
+//    }
     $exist = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid))['views'];
     if ($archive->is('single')) {
         $cookie = Typecho_Cookie::get('contents_views');
