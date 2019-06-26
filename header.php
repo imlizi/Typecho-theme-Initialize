@@ -31,13 +31,13 @@
             <?php if ($this->options->logoUrl): ?>
                 <h1>
                     <a id="logo" href="<?php $this->options->siteUrl(); ?>">
-                        <?php if ($this->options->customTitle): $this->options->customTitle(); else: $this->options->title(); endif; ?>
+                        <img src="<?php $this->options->logoUrl(); ?>" alt="<?php $this->options->title(); ?>">
                     </a>
                 </h1>
             <?php else: ?>
                 <h1>
                     <a id="logo"
-                       href="<?php $this->options->siteUrl(); ?>"><?php if ($this->options->customTitle): $this->options->customTitle(); else: $this->options->title(); endif; ?></a>
+                       href="<?php $this->options->siteUrl(); ?>"><?php if ($this->options->customTitle): $this->options->customTitle(); else: $this->options->title(); endif; ?><sub><?php $this->options->description() ?></sub></a>
                 </h1>
             <?php endif; ?>
         </div>

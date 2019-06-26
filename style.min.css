@@ -230,6 +230,11 @@ button, input[type=submit] {
     color: #333;
 }
 
+#logo sub{
+    color: #cdcdcd;
+    font-size: 66%;
+}
+
 .post-title.index a:hover {
     margin-left: 20px;
 }
