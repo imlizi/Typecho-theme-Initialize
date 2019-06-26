@@ -64,7 +64,118 @@
 <?php endif; ?>
     <script src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/jquery/2.1.4/jquery.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js<?php else: ?>cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js<?php endif; ?>"></script>
     <script src="https://<?php if ($this->options->cjCDN=='bc'): ?>cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js<?php elseif ($this->options->cjCDN =='cf'): ?>cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js<?php else: ?>cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js<?php endif;?>"></script>
+    <script src="https://<?php if ($this->options->cjCDN=='bc'): ?>cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js<?php elseif ($this->options->cjCDN =='cf'): ?>cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js<?php else: ?>cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.cjs.min.js<?php endif;?>"></script>
     <script src='<?php $this->options->themeUrl('js/notie.js') ?>'></script>
+    <script>
+        var cornertool = true;
+        function copyCode(num) {
+            var clipboard = new ClipboardJS("#copyCode" + num, {
+                text: function () {
+                    return $("#code-" + num + " code").text();
+                }
+            });
+            clipboard.on("success", function () {
+                var txt = $("#copyCode"+num);
+                txt.text('复制成功!');
+                setTimeout(function () {
+                    txt.text('复制');
+                },2000);
+            });
+            clipboard.on("error", function () {
+                console.log('err')
+            });
+        }
+        function tooltip() {
+            $("a,div,li,h3,h4,img,i,span").each(function () {
+                $("#tooltip").remove();
+                if (this.title) {
+                    var a = this.title;
+                    $(this).mouseover(function (b) {
+                        this.title = "";
+                        $("body").append('<div id="tooltip">' + a + "</div>");
+                        $("#tooltip").css({
+                            left: b.pageX - 15 + "px",
+                            top: b.pageY + 30 + "px",
+                            opacity: "0.8"
+                        }).fadeIn(250)
+                    }).mouseout(function () {
+                        this.title = a;
+                        $("#tooltip").remove()
+                    }).mousemove(function (b) {
+                        $("#tooltip").css({
+                            left: b.pageX - 15 + "px",
+                            top: b.pageY + 30 + "px"
+                        })
+                    })
+                }
+            });
+        }
+        function cl() {
+            var a = document.getElementById("catalog-col"), b = document.getElementById("catalog"),
+                c = document.getElementById("cornertool"), d;
+            if (a && !b) {
+                if (c) {
+                    c = c.getElementsByTagName("ul")[0];
+                    d = document.createElement("li");
+                    d.setAttribute("id", "catalog");
+                    d.setAttribute("onclick", "Catalogswith()");
+                    d.appendChild(document.createElement("span"));
+                    c.appendChild(d)
+                } else {
+                    cornertool = false;
+                    c = document.createElement("div");
+                    c.setAttribute("id", "cornertool");
+                    c.innerHTML = '<ul><li id="catalog" onclick="Catalogswith()"><span></span></li></ul>';
+                    document.body.appendChild(c)
+                }
+            }
+            if (!a && b) {
+                cornertool ? c.getElementsByTagName("ul")[0].removeChild(b) : document.body.removeChild(c)
+            }
+            if (a && b) {
+                b.className = a.className
+            }
+        }
+        function fancybox() {
+            $(".post-content img:not('.no-lightbox')").each(function () {
+                var href = $(this).parent("a").attr("href");
+                if (href && href != 'javascript:void();') {
+                    $(this).parent("a").attr('data-fancybox', 'gallery');
+                    $(this).parent("a").attr("data-caption", $(this).attr("title"));
+                } else {
+                    $(this).wrap("<a data-fancybox='gallery' href='" + $(this).attr("src") + "' data-caption='" + $(this).attr("title") + "'></a>");
+                }
+            });
+            $('[data-fancybox="gallery"]').fancybox();
+        }
+
+        cl();
+        console.log("%c Initial By JIElive %c http://www.offodd.com %c Fly By FlyingSKy %chttps://fsky7.com/ %cImabsn By imabsn.com %c https://imabsn.com/","color:#fff;background:#444;padding:5px 0;border: 1px solid #444;","color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;","color:#fff;background:#444;padding:5px 0;border: 1px solid #444;","color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;","color:#fff;background:#444;padding:5px 0;border: 1px solid #444;","color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;",);
+        console.log("%c <?php $this->options->title(); ?>%c 欢迎您 %c Copyright © 2012-%s",
+            'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size:50px;color:#0c0;-webkit-text-fill-color:#0c0;-webkit-text-stroke: 1px #0c0;',
+            "font-size:20px;color:#ccc", "font-size:12px;color:#999999;", (new Date).getFullYear());
+        console.log("%c 发现Bug请到留言页面给我反馈(・ω・)\n 谢谢(●￣(ｴ)￣●) " +  + "", "color:#333;font-size:16px;");
+        $(document).ready(function () {
+            $(".post-content pre").each(function (numecode) {
+                $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
+                $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode'+numecode+'" onclick="copyCode('+numecode+')">复制</a></div></div>');
+            });
+            var clipboardLink = new ClipboardJS("#copy-link", {
+                text: function () {
+                    return $("#post-link").text();
+                }
+            });
+            clipboardLink.on("success", function () {
+                notie('复制成功', {type: 'success', autoHide: true, timeout: 3000, width: 120});
+            });
+            clipboardLink.on("error", function () {
+                notie('复制失败，请手动Ctrl+C', {type: 'error', autoHide: true, timeout: 3000, width: 120});
+            });
+            tooltip();
+            fancybox();
+        })
+
+    </script>
 <?php
 if ($this->options->PjaxOption): ?>
     <script src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js<?php else: ?>cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js<?php endif; ?>"></script>
@@ -92,6 +203,7 @@ if ($this->options->PjaxOption): ?>
                 $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode'+numecode+'" onclick="copyCode('+numecode+')">复制</a></div></div>');
             });
             tooltip();
+            fancybox();
             setTimeout(function () {
                 $("#bar").remove()
             }, 300);
@@ -432,103 +544,6 @@ if ($this->options->MusicSet && $this->options->MusicUrl): ?>
             b.removeAttribute("class")
         })();</script>
 <?php endif;if ($this->options->CustomContent): $this->options->CustomContent();endif; ?>
-    <script>
-        var cornertool = true;
-        function copyCode(num) {
-            var clipboard = new ClipboardJS("#copyCode" + num, {
-                text: function () {
-                    return $("#code-" + num + " code").text();
-                }
-            });
-            clipboard.on("success", function () {
-                var txt = $("#copyCode"+num);
-                txt.text('复制成功!');
-                setTimeout(function () {
-                    txt.text('复制');
-                },2000);
-            });
-            clipboard.on("error", function () {
-                console.log('err')
-            });
-        }
-        function tooltip() {
-            $("a,div,li,h3,h4,img,i,span").each(function () {
-                $("#tooltip").remove();
-                if (this.title) {
-                    var a = this.title;
-                    $(this).mouseover(function (b) {
-                        this.title = "";
-                        $("body").append('<div id="tooltip">' + a + "</div>");
-                        $("#tooltip").css({
-                            left: b.pageX - 15 + "px",
-                            top: b.pageY + 30 + "px",
-                            opacity: "0.8"
-                        }).fadeIn(250)
-                    }).mouseout(function () {
-                        this.title = a;
-                        $("#tooltip").remove()
-                    }).mousemove(function (b) {
-                        $("#tooltip").css({
-                            left: b.pageX - 15 + "px",
-                            top: b.pageY + 30 + "px"
-                        })
-                    })
-                }
-            });
-        }
-        function cl() {
-            var a = document.getElementById("catalog-col"), b = document.getElementById("catalog"),
-                c = document.getElementById("cornertool"), d;
-            if (a && !b) {
-                if (c) {
-                    c = c.getElementsByTagName("ul")[0];
-                    d = document.createElement("li");
-                    d.setAttribute("id", "catalog");
-                    d.setAttribute("onclick", "Catalogswith()");
-                    d.appendChild(document.createElement("span"));
-                    c.appendChild(d)
-                } else {
-                    cornertool = false;
-                    c = document.createElement("div");
-                    c.setAttribute("id", "cornertool");
-                    c.innerHTML = '<ul><li id="catalog" onclick="Catalogswith()"><span></span></li></ul>';
-                    document.body.appendChild(c)
-                }
-            }
-            if (!a && b) {
-                cornertool ? c.getElementsByTagName("ul")[0].removeChild(b) : document.body.removeChild(c)
-            }
-            if (a && b) {
-                b.className = a.className
-            }
-        }
-
-        cl();
-        console.log("%c Initial By JIElive %c http://www.offodd.com %c Fly By FlyingSKy %chttps://fsky7.com/ %cImabsn By imabsn.com %c https://imabsn.com/","color:#fff;background:#444;padding:5px 0;border: 1px solid #444;","color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;","color:#fff;background:#444;padding:5px 0;border: 1px solid #444;","color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;","color:#fff;background:#444;padding:5px 0;border: 1px solid #444;","color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;",);
-        console.log("%c <?php $this->options->title(); ?>%c 欢迎您 %c Copyright © 2012-%s",
-            'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size:50px;color:#0c0;-webkit-text-fill-color:#0c0;-webkit-text-stroke: 1px #0c0;',
-            "font-size:20px;color:#ccc", "font-size:12px;color:#999999;", (new Date).getFullYear());
-        console.log("%c 发现Bug请到留言页面给我反馈(・ω・)\n 谢谢(●￣(ｴ)￣●) " +  + "", "color:#333;font-size:16px;");
-        $(document).ready(function () {
-            $(".post-content pre").each(function (numecode) {
-                $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
-                $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode'+numecode+'" onclick="copyCode('+numecode+')">复制</a></div></div>');
-            });
-            var clipboardLink = new ClipboardJS("#copy-link", {
-                text: function () {
-                    return $("#post-link").text();
-                }
-            });
-            clipboardLink.on("success", function () {
-                notie('复制成功', {type: 'success', autoHide: true, timeout: 3000, width: 120});
-            });
-            clipboardLink.on("error", function () {
-                notie('复制失败，请手动Ctrl+C', {type: 'error', autoHide: true, timeout: 3000, width: 120});
-            });
-            tooltip();
-        })
-
-    </script>
 <?php if ($this->options->DarkMode): ?>
     <?php
     if ($this->options->DarkModeFD && $this->options->DarkModeDomain) {

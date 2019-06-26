@@ -17,7 +17,7 @@
         ), '', ' - '); ?><?php $this->options->title();
         if ($this->is('index') && $this->options->subTitle): ?> - <?php $this->options->subTitle(); endif; ?></title>
     <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&antiSpam=&atom='); ?>
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.min.css') ?>"/>
+    <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet"><link rel="stylesheet" href="<?php $this->options->themeUrl('style.min.css') ?>"/>
 </head>
 <body
     class="<?php if ($_COOKIE['dark'] == '1'): ?>dark<?php endif; ?> <?php if ($this->options->HeadFixed): ?>head-fixed<?php endif; ?>">
