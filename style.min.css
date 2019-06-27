@@ -1382,11 +1382,37 @@ div.code-toolbar > .toolbar a {
 body.dark {
     background: none #263238;
     color: #aaa;
+    text-shadow: none;
 }
 
 body.dark * {
     border-color: #344148 !important;
 }
+
+body.dark #logo sub{
+    color: #999999;
+}
+
+body.dark #tooltip{
+    background: #333333;
+}
+
+body.dark #tooltip:before{
+    border: 6px dashed #333333;
+    border-top: 0;
+    color: #fff;
+    content: ' ';
+    line-height: 0;
+    border-bottom-style: solid;
+    border-left-color: transparent;
+    border-right-color: transparent
+}
+
+body.dark .widget-list li a:hover{
+    background: #333333;
+}
+
+
 
 body.dark .rewards a, body.dark .tags a, body.dark .comment-author a, body.dark .post-content a, body.dark .comment-content a {
     color: #6a85ca;
@@ -1413,7 +1439,7 @@ body.dark #logo, body.dark .post-title a, body.dark .comment-author, body.dark b
     color: #aaa !important;
 }
 
-body.dark pre, body.dark code, body.dark input, body.dark textarea, body.dark button, body.dark blockquote, body.dark .post-content .links li a, body.dark .menu-parent ul, body.dark .comment-list li.comment-level-odd, body.dark .comment-list li.comment-by-author, body.dark .whisper .comment-child, body.dark table tr, body.dark table th {
+body.dark pre, body.dark code, body.dark input, body.dark textarea, body.dark button, body.dark blockquote, body.dark .post-content .links li a, body.dark .menu-parent ul,body.dark .menu-parent .menu-parent ul.menu-child, body.dark .comment-list li.comment-level-odd, body.dark .comment-list li.comment-by-author, body.dark .whisper .comment-child, body.dark table tr, body.dark table th {
     background: #344148;
 }
 
