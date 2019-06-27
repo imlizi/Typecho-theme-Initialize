@@ -636,19 +636,6 @@ function themeFields($layout)
             false => _t('关闭')),
         false, _t('文章目录'), _t('默认关闭，启用则会在文章内显示“文章目录”（若文章内无任何标题，则不显示目录）'));
     $layout->addItem($catalog);
-
-//    if ($_SERVER['SCRIPT_NAME'] == "/admin/write-post.php" || $_SERVER['SCRIPT_NAME'] == "/admin/write-page.php") {
-//        $licenses = new Typecho_Widget_Helper_Form_Element_Radio('linceses',
-//            array('BY' => _t('CC BY'),
-//                'BY-SA' => _t('CC BY-SA'),
-//                'BY-ND' => _t('CC BY-ND'),
-//                'BY-NC' => _t('CC BY-NC'),
-//                'BY-NC-SA' => _t('CC BY-NC-SA'),
-//                'BY-NC-ND' => _t('CC BY-NC-ND'),
-//                'NONE' => _t('没有')),
-//            'NONE', _t('许可协议'), _t('默认没有协议，请前往 <a href="https://creativecommons.org/licenses/" target="_blank">CreativeCommons</a> 查看更多关于协议的内容，仅支持 4.0 ( 国际 ) 协议'));
-//        $layout->addItem($licenses);
-//    }
 }
 
 function MyLinks($links)
@@ -699,4 +686,9 @@ function smartDateTime($time)
         }
     };
     return '';
+}
+
+function randomPost($limit = 10)
+{
+
 }
