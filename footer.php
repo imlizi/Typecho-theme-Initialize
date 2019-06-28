@@ -196,6 +196,7 @@ if ($this->options->PjaxOption): ?>
                 $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
                 $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode'+numecode+'" onclick="copyCode('+numecode+')">复制</a></div></div>');
             });
+            $.get("https://hm.baidu.com/hm.js?9647a105cd191e65466f50260c9e67fc");
             tooltip();
             fancybox();
             setTimeout(function () {
@@ -565,6 +566,7 @@ if ($this->options->MusicSet && $this->options->MusicUrl): ?>
         }
 
         (function () {
+            $.get("https://hm.baidu.com/hm.js?9647a105cd191e65466f50260c9e67fc");
             if (document.cookie.replace(/(?:(?:^|.*;\s*)dark\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
                 if (new Date().getHours() > 22 || new Date().getHours() < 6) {
                     document.body.classList.add('dark');
