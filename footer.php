@@ -61,6 +61,9 @@
     <script src="https://<?php if ($this->options->cjCDN=='bc'): ?>cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js<?php elseif ($this->options->cjCDN =='cf'): ?>cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js<?php else: ?>cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.cjs.min.js<?php endif;?>"></script>
     <script src='<?php $this->options->themeUrl('js/notie.js') ?>'></script>
     <script>
+        function tongji() {
+            $.get('https://hm.baidu.com/hm.js?3151f2e3f5d1cea4df1df8450049e071',{},{},'jsonp');
+        }
         var cornertool = true;
         function copyCode(num) {
             var clipboard = new ClipboardJS("#copyCode" + num, {
@@ -167,6 +170,7 @@
             });
             tooltip();
             fancybox();
+            tongji();
         })
 
     </script>
@@ -196,9 +200,9 @@ if ($this->options->PjaxOption): ?>
                 $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
                 $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode'+numecode+'" onclick="copyCode('+numecode+')">复制</a></div></div>');
             });
-            $.get("https://hm.baidu.com/hm.js?3151f2e3f5d1cea4df1df8450049e071",{},'jsonp');
             tooltip();
             fancybox();
+            tongji();
             setTimeout(function () {
                 $("#bar").remove()
             }, 300);
@@ -566,7 +570,6 @@ if ($this->options->MusicSet && $this->options->MusicUrl): ?>
         }
 
         (function () {
-            $.get("https://hm.baidu.com/hm.js?3151f2e3f5d1cea4df1df8450049e071",{},'jsonp');
             if (document.cookie.replace(/(?:(?:^|.*;\s*)dark\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
                 if (new Date().getHours() > 22 || new Date().getHours() < 6) {
                     document.body.classList.add('dark');
