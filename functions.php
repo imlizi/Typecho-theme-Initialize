@@ -523,10 +523,10 @@ function Links($sorts = NULL, $icon = 0, $siderbar = 0)
             if ($sorts) {
                 $arr = explode(',', $sorts);
                 if ($sort && in_array($sort, $arr)) {
-                    $link .= '<li><a' . ($url ? ' href="' . $url . '"' : '') . ($icon == 1 && $url ? ' class="l_logo"' : '') . ' title="' . $description . '" target="_blank">' . ($icon == 1 && $url ? '<img src="' . ($logo ? $logo : rtrim($url, '/') . '/favicon.ico') . '" onerror="erroricon(this)">' : '') . '<span>' . ($url ? $name : '<del>' . $name . '</del>') . '</span></a></li>' . "\n";
+                    $link .= '<li><a' . ($url ? ' href="' . $url . '"' : '') . ($icon == 1 && $url ? ' class="l_logo"' : '') . ' title="' . $description . '" target="_blank">' . ($icon == 1 && $url ? '<img src="' . ($logo ? $logo : rtrim($url, '/') . '/favicon.ico') . '" onerror="erroricon(this)" class="no-lightbox">' : '') . '<span>' . ($url ? $name : '<del>' . $name . '</del>') . '</span></a></li>' . "\n";
                 }
             } else {
-                $link .= '<li><a' . ($url ? ' href="' . $url . '"' : '') . ($icon == 1 && $url ? ' class="l_logo"' : '') . ' title="' . $description . '" target="_blank">' . ($icon == 1 && $url ? '<img src="' . ($logo ? $logo : rtrim($url, '/') . '/favicon.ico') . '" onerror="erroricon(this)">' : '') . '<span>' . ($url ? $name : '<del>' . $name . '</del>') . '</span></a></li>' . "\n";
+                $link .= '<li><a' . ($url ? ' href="' . $url . '"' : '') . ($icon == 1 && $url ? ' class="l_logo"' : '') . ' title="' . $description . '" target="_blank">' . ($icon == 1 && $url ? '<img src="' . ($logo ? $logo : rtrim($url, '/') . '/favicon.ico') . '" onerror="erroricon(this)" class="no-lightbox">' : '') . '<span>' . ($url ? $name : '<del>' . $name . '</del>') . '</span></a></li>' . "\n";
             }
         }
     }
