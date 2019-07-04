@@ -12,12 +12,12 @@
                 <?php endif; ?>
             </section>
         <?php endif; ?>
-        <?php if (!empty($this->options->sidebarBlock) && in_array('ShowWaySit', $this->options->sidebarBlock)): ?>
+        <?php if (!empty($this->options->sidebarBlock) && in_array('ShowWaySit', $this->options->sidebarBlock) && $this->options->WaySit): ?>
             <section class="widget">
                 <?= $this->options->WaySit ?>
             </section>
         <?php endif; ?>
-        <?php if (!empty($this->options->sidebarBlock) && in_array('ShowEatFoodSit', $this->options->sidebarBlock)): ?>
+        <?php if (!empty($this->options->sidebarBlock) && in_array('ShowEatFoodSit', $this->options->sidebarBlock) && $this->options->EatFoodSit): ?>
             <section class="widget">
                 <?= $this->options->EatFoodSit ?>
             </section>
