@@ -186,7 +186,6 @@ button, input[type=submit] {
     background: #f0f3f4;
     border-radius: 4px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.1);
-    position: relative;
 }
 
 .head-fixed .browsehappy {
@@ -1101,13 +1100,9 @@ div.code-toolbar > .toolbar a {
 }
 
 #secondary {
-    /*float: right;*/
+    float: right;
     width: 320px;
-    /*margin-left: -321px;*/
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
+    margin-left: -321px;
     border-left: 1px solid #dee5e7;
     word-wrap: break-word;
     background: #ffffff;
