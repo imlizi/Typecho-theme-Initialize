@@ -28,10 +28,17 @@
 
                     show_runtime();</script>
             <?php endif; ?>
-            <?php if ($this->options->ICPbeian): ?>
-                <p><a href="http://beian.miit.gov.cn" class="icpnum" target="_blank"
-                      rel="nofollow"><?php $this->options->ICPbeian(); ?></a></p>
-            <?php endif; ?>
+            <p>
+                <?php if ($this->options->ICPbeian): ?>
+                    <a href="http://beian.miit.gov.cn" class="icpnum" target="_blank"
+                       rel="nofollow"><?php $this->options->ICPbeian(); ?></a>
+                <?php endif; ?>
+                <?php if ($this->options->GAbeian): ?>
+                    <img src="<?php $this->options->themeUrl('images/wab.png'); ?>">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php $this->options->GAbeian(); ?>" class="icpnum" target="_blank"
+                       rel="nofollow"><?php $this->options->GAbeian(); ?></a>
+                <?php endif; ?>
+            </p>
         </div>
     </footer>
 <?php if ($this->options->scrollTop || ($this->options->MusicSet && $this->options->MusicUrl) || $this->options - DarkMode): ?>

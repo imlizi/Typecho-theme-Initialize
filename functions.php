@@ -210,6 +210,8 @@ function themeConfig($form)
 
     $ICPbeian = new Typecho_Widget_Helper_Form_Element_Text('ICPbeian', NULL, NULL, _t('ICP备案号'), _t('在这里输入ICP备案号,留空则不显示'));
     $form->addInput($ICPbeian);
+    $GAbeian = new Typecho_Widget_Helper_Form_Element_Text('GAbeian', NULL, NULL, _t('公安备案号'), _t('在这里输入公安备案号,留空则不显示'));
+    $form->addInput($GAbeian);
 
     $ButtomText = new Typecho_Widget_Helper_Form_Element_Textarea('ButtomText', NULL, NULL, _t('底部自定义内容'), _t('位于底部版权下方建站时间上方'));
     $form->addInput($ButtomText);
