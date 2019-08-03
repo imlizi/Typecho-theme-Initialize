@@ -37,7 +37,7 @@
             <?php else: ?>
                 <h1>
                     <a id="logo"
-                       href="<?php $this->options->siteUrl(); ?>"><?php if ($this->options->customTitle): $this->options->customTitle(); else: $this->options->title(); endif; ?><sub><?php $this->options->description() ?></sub></a>
+                       href="<?php $this->options->siteUrl(); ?>"><?php if ($this->options->customTitle): $this->options->customTitle(); else: $this->options->title(); endif; ?><span class="sub"><?php $this->options->description() ?></span></a>
                 </h1>
             <?php endif; ?>
         </div>
