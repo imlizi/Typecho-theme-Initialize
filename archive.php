@@ -1,23 +1,23 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (!$this->request->isAjax() || $this->request->get('_pjax') !== '#main'):
     $this->need('header.php');
-endif;?>
+endif; ?>
     <div id="main">
         <div class="main-container main">
             <header class="post-main">
                 <div class="breadcrumbs"><a href="<?php $this->options->siteUrl(); ?>">首页</a>&raquo;
                     <?php
-                        if ($this->is('category')) {
-                            echo '分类文章';
-                        }elseif ($this->is('search')) {
-                            echo '搜索结果';
-                        } elseif ($this->is('tag')) {
-                            echo '标签文章';
-                        } elseif ($this->is('date')) {
-                            echo '日期归档';
-                        } else {
-                            echo '作者文章';
-                        }
+                    if ($this->is('category')) {
+                        echo '分类文章';
+                    } elseif ($this->is('search')) {
+                        echo '搜索结果';
+                    } elseif ($this->is('tag')) {
+                        echo '标签文章';
+                    } elseif ($this->is('date')) {
+                        echo '日期归档';
+                    } else {
+                        echo '作者文章';
+                    }
                     ?>
                 </div>
                 <h1 class="post-title">
@@ -33,9 +33,11 @@ endif;?>
 
             <?php if ($this->have()): ?>
                 <?php while ($this->next()): ?>
-                    <article class="post<?php if ($this->options->PjaxOption && $this->hidden): ?> protected<?php endif; ?>">
+                    <article
+                        class="post<?php if ($this->options->PjaxOption && $this->hidden): ?> protected<?php endif; ?>">
                         <div class="post-list">
-                            <h2 class="post-title index"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
+                            <h2 class="post-title index"><a
+                                    href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
                             <ul class="post-meta">
                                 <li><?php $this->date(); ?></li>
                                 <li><?php $this->category(',', false); ?></li>
@@ -60,7 +62,8 @@ endif;?>
                                     <?php endif; ?>
                                     <p><?php $this->excerpt(200, ''); ?></p>
                                 <?php endif; ?>
-                                <p class="more"><a href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">- 阅读全文
+                                <p class="more"><a href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">-
+                                        阅读全文
                                         -</a></p>
                             </div>
                         </div>

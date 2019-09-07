@@ -78,9 +78,10 @@ function threadedComments($comments, $options)
             <article class="post">
                 <div class="post-content">
                     <?php $this->content(); ?>
-                    <p><img src="<?php $this->options->themeUrl('images/sakurais.png');?>"></p>
+                    <p><img src="<?php $this->options->themeUrl('images/sakurais.png'); ?>"></p>
                 </div>
-                <div id="comments" class="whisper<?php if ($this->user->pass('editor', true)): ?> permission<?php endif; ?>">
+                <div id="comments"
+                     class="whisper<?php if ($this->user->pass('editor', true)): ?> permission<?php endif; ?>">
                     <?php $this->comments()->to($comments); ?>
                     <?php if ($comments->have()): ?>
                         <?php $comments->listComments(); ?>
@@ -154,7 +155,8 @@ function threadedComments($comments, $options)
                                         return false
                                     }, cancelReply: function () {
                                         var response = this.dom('<?php $this->respondId(); ?>'),
-                                            holder = this.dom('comment-form-place-holder'), input = this.dom('comment-parent'),
+                                            holder = this.dom('comment-form-place-holder'),
+                                            input = this.dom('comment-parent'),
                                             form = 'form' == response.tagName ? response : response.getElementsByTagName('form')[0];
                                         if (null != input) {
                                             input.parentNode.removeChild(input)

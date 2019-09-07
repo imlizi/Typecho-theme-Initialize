@@ -10,7 +10,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (!$this->request->isAjax() || $this->request->get('_pjax') !== '#main'):
     $this->need('header.php');
-endif;?>
+endif; ?>
     <div id="main">
         <div class="main-container">
             <?php if ($this->_currentPage == 1 && !empty($this->options->ShowWhisper) && in_array('index', $this->options->ShowWhisper)): ?>
@@ -26,9 +26,11 @@ endif;?>
                 </article>
             <?php endif; ?>
             <?php while ($this->next()): ?>
-                <article class="post<?php if ($this->options->PjaxOption && $this->hidden): ?> protected<?php endif; ?>">
+                <article
+                    class="post<?php if ($this->options->PjaxOption && $this->hidden): ?> protected<?php endif; ?>">
                     <div class="post-list">
-                        <h2 class="post-title index"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
+                        <h2 class="post-title index"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
+                        </h2>
                         <ul class="post-meta">
                             <li><?php $this->date(); ?></li>
                             <li><?php $this->category(',', false); ?></li>

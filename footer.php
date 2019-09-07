@@ -35,7 +35,8 @@
                 <?php endif; ?>
                 <?php if ($this->options->GAbeian): ?>
                     <img src="<?php $this->options->themeUrl('images/wab.png'); ?>">
-                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php $this->options->GAbeian(); ?>" class="icpnum" target="_blank"
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php $this->options->GAbeian(); ?>"
+                       class="icpnum" target="_blank"
                        rel="nofollow"><?php $this->options->GAbeian(); ?></a>
                 <?php endif; ?>
             </p>
@@ -63,15 +64,20 @@
         </ul>
     </div>
 <?php endif; ?>
-    <script src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/jquery/2.1.4/jquery.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js<?php else: ?>cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js<?php endif; ?>"></script>
-    <script src="https://<?php if ($this->options->cjCDN=='bc'): ?>cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js<?php elseif ($this->options->cjCDN =='cf'): ?>cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js<?php else: ?>cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js<?php endif;?>"></script>
-    <script src="https://<?php if ($this->options->cjCDN=='bc'): ?>cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js<?php elseif ($this->options->cjCDN =='cf'): ?>cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js<?php else: ?>cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.cjs.min.js<?php endif;?>"></script>
+    <script
+        src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/jquery/2.1.4/jquery.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js<?php else: ?>cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js<?php endif; ?>"></script>
+    <script
+        src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js<?php else: ?>cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js<?php endif; ?>"></script>
+    <script
+        src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js<?php else: ?>cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.cjs.min.js<?php endif; ?>"></script>
     <script src='<?php $this->options->themeUrl('js/notie.js') ?>'></script>
     <script>
         function tongji() {
-            $.get('https://hm.baidu.com/hm.js?3151f2e3f5d1cea4df1df8450049e071',{},{},'jsonp');
+            $.get('https://hm.baidu.com/hm.js?3151f2e3f5d1cea4df1df8450049e071', {}, {}, 'jsonp');
         }
+
         var cornertool = true;
+
         function copyCode(num) {
             var clipboard = new ClipboardJS("#copyCode" + num, {
                 text: function () {
@@ -79,16 +85,17 @@
                 }
             });
             clipboard.on("success", function () {
-                var txt = $("#copyCode"+num);
+                var txt = $("#copyCode" + num);
                 txt.text('复制成功!');
                 setTimeout(function () {
                     txt.text('复制');
-                },2000);
+                }, 2000);
             });
             clipboard.on("error", function () {
                 console.log('err')
             });
         }
+
         function tooltip() {
             $("a,div,li,h3,h4,img,i,span").each(function () {
                 $("#tooltip").remove();
@@ -114,6 +121,7 @@
                 }
             });
         }
+
         function cl() {
             var a = document.getElementById("catalog-col"), b = document.getElementById("catalog"),
                 c = document.getElementById("cornertool"), d;
@@ -140,6 +148,7 @@
                 b.className = a.className
             }
         }
+
         function fancybox() {
             $(".post-content img:not('.no-lightbox')").each(function () {
                 var href = $(this).parent("a").attr("href");
@@ -154,15 +163,15 @@
         }
 
         cl();
-        console.log("%c Initial By JIElive %c http://www.offodd.com %c Fly By FlyingSKy %chttps://fsky7.com/ %cImabsn By imabsn.com %c https://imabsn.com/","color:#fff;background:#444;padding:5px 0;border: 1px solid #444;","color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;","color:#fff;background:#444;padding:5px 0;border: 1px solid #444;","color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;","color:#fff;background:#444;padding:5px 0;border: 1px solid #444;","color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;",);
+        console.log("%c Initial By JIElive %c http://www.offodd.com %c Fly By FlyingSKy %chttps://fsky7.com/ %cImabsn By imabsn.com %c https://imabsn.com/", "color:#fff;background:#444;padding:5px 0;border: 1px solid #444;", "color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;", "color:#fff;background:#444;padding:5px 0;border: 1px solid #444;", "color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;", "color:#fff;background:#444;padding:5px 0;border: 1px solid #444;", "color:#fff;background:#fff;padding:5px 0;border: 1px solid #444;",);
         console.log("%c <?php $this->options->title(); ?>%c 欢迎您 %c Copyright © 2012-%s",
             'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size:50px;color:#0c0;-webkit-text-fill-color:#0c0;-webkit-text-stroke: 1px #0c0;',
             "font-size:20px;color:#ccc", "font-size:12px;color:#999999;", (new Date).getFullYear());
-        console.log("%c 发现Bug请到留言页面给我反馈(・ω・)\n 谢谢(●￣(ｴ)￣●) " +  + "", "color:#333;font-size:16px;");
+        console.log("%c 发现Bug请到留言页面给我反馈(・ω・)\n 谢谢(●￣(ｴ)￣●) " + +"", "color:#333;font-size:16px;");
         $(document).ready(function () {
             $(".post-content pre").each(function (numecode) {
                 $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
-                $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode'+numecode+'" onclick="copyCode('+numecode+')">复制</a></div></div>');
+                $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
             });
             var clipboardLink = new ClipboardJS("#copy-link", {
                 text: function () {
@@ -183,7 +192,8 @@
     </script>
 <?php
 if ($this->options->PjaxOption): ?>
-    <script src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js<?php else: ?>cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js<?php endif; ?>"></script>
+    <script
+        src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js<?php else: ?>cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js<?php endif; ?>"></script>
     <script>jQuery.fn.Shake = function (n, d) {
             this.each(function () {
                 var jSelf = $(this);
@@ -205,7 +215,7 @@ if ($this->options->PjaxOption): ?>
         }).on('pjax:complete', function () {
             $(".post-content pre").each(function (numecode) {
                 $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
-                $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode'+numecode+'" onclick="copyCode('+numecode+')">复制</a></div></div>');
+                $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
             });
             tooltip();
             fancybox();
@@ -549,7 +559,8 @@ if ($this->options->MusicSet && $this->options->MusicUrl): ?>
             };
             b.removeAttribute("class")
         })();</script>
-<?php endif;if ($this->options->CustomContent): $this->options->CustomContent();endif; ?>
+<?php endif;
+if ($this->options->CustomContent): $this->options->CustomContent();endif; ?>
 <?php if ($this->options->DarkMode): ?>
     <?php
     if ($this->options->DarkModeFD && $this->options->DarkModeDomain) {

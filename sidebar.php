@@ -43,9 +43,11 @@
             <section class="widget">
                 <h3 class="widget-title">最近回复</h3>
                 <ul class="widget-list">
-                    <?php $this->widget('Widget_Comments_Recent','ignoreAuthor=true')->to($comments); ?>
-                    <?php while($comments->next()): ?>
-                        <li><a href="<?php $comments->permalink(); ?>" title="<?php $comments->title(); ?>"><?php $comments->author(false); ?>: <?php $comments->excerpt(35, '...'); ?></a></li>
+                    <?php $this->widget('Widget_Comments_Recent', 'ignoreAuthor=true')->to($comments); ?>
+                    <?php while ($comments->next()): ?>
+                        <li><a href="<?php $comments->permalink(); ?>"
+                               title="<?php $comments->title(); ?>"><?php $comments->author(false); ?>
+                                : <?php $comments->excerpt(35, '...'); ?></a></li>
                     <?php endwhile; ?>
                 </ul>
             </section>
@@ -66,10 +68,11 @@
                     <?php $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=0&limit=30')->to($tags); ?>
                     <?php if ($tags->have()): ?>
                         <?php while ($tags->next()): ?>
-                            <a href="<?php $tags->permalink(); ?>" title="共<?php $tags->count(); ?>篇文章"><?php $tags->name(); ?></a>
+                            <a href="<?php $tags->permalink(); ?>"
+                               title="共<?php $tags->count(); ?>篇文章"><?php $tags->name(); ?></a>
                         <?php endwhile; ?>
                     <?php else: ?>
-                            <a>暂无标签</a>
+                        <a>暂无标签</a>
                     <?php endif; ?>
                 </div>
             </section>

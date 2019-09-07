@@ -1,14 +1,14 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (!$this->request->isAjax() || $this->request->get('_pjax') !== '#main'):
     $this->need('header.php');
-endif;?>
+endif; ?>
     <div id="main">
         <div class="main-container main">
             <header class="post-main">
                 <?php if (!empty($this->options->Breadcrumbs) && in_array('Postshow', $this->options->Breadcrumbs)): ?>
                     <div class="breadcrumbs">
                         <a href="<?php $this->options->siteUrl(); ?>">首页</a> &raquo; <?php $this->category(); ?>
-                        &raquo; <?php if (!empty($this->options->Breadcrumbs) && in_array('Text', $this->options->Breadcrumbs)): $this->title();?>&nbsp;正文<?php else: $this->title(); endif; ?>
+                        &raquo; <?php if (!empty($this->options->Breadcrumbs) && in_array('Text', $this->options->Breadcrumbs)): $this->title(); ?>&nbsp;正文<?php else: $this->title(); endif; ?>
                     </div>
                 <?php endif; ?>
                 <h1 class="post-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
@@ -58,9 +58,9 @@ endif;?>
                 </div>
                 <div class="postinfo">
                     <?php
-                    $wx=$this->options->WeChat;
+                    $wx = $this->options->WeChat;
                     $ali = $this->options->Alipay;
-                    if ( $wx || $ali): ?>
+                    if ($wx || $ali): ?>
                         <div class="rewards">
                             <span>&curren;&nbsp;打赏：</span>
                             <?php if ($wx): ?>
@@ -73,11 +73,12 @@ endif;?>
                     <?php endif; ?>
                     <div class="tags-cloud">
                         <span>&curren;&nbsp;标签：</span>
-                        <?php $this->tags(' ',true,'暂无标签'); ?>
+                        <?php $this->tags(' ', true, '暂无标签'); ?>
                     </div>
                     <div class="copyright">
                         <span>&curren;&nbsp;版权：</span>
-                        如无特殊说明，文章均为 <b><a href="<?php $this->options->siteUrl() ?>"><?php $this->options->title() ?></a></b> 原创，转载请注明出处，并保证文章完整性，谢谢合作
+                        如无特殊说明，文章均为 <b><a href="<?php $this->options->siteUrl() ?>"><?php $this->options->title() ?></a></b>
+                        原创，转载请注明出处，并保证文章完整性，谢谢合作
                     </div>
                     <div class="postlink">
                         <span>&curren;&nbsp;链接：</span>
@@ -88,10 +89,10 @@ endif;?>
             </article>
             <div class="post-navigation clearfix">
                 <span>
-                    <?php $this->thePrev('%s', '没有了', ['title'=>'上一篇']); ?>
+                    <?php $this->thePrev('%s', '没有了', ['title' => '上一篇']); ?>
                 </span>
                 <span>
-                    <?php $this->theNext('%s', '没有了',['title'=>'下一篇']); ?>
+                    <?php $this->theNext('%s', '没有了', ['title' => '下一篇']); ?>
                 </span>
             </div>
             <?php $this->need('comments.php'); ?>

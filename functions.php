@@ -378,7 +378,7 @@ function Contents_Post_Initial($limit = 10, $order = 'created')
         ->limit($limit), array(Typecho_Widget::widget('Widget_Abstract_Contents'), 'filter'));
     if ($posts) {
         foreach ($posts as $post) {
-            echo '<li><a title="查看文章'.$post['title'].'" ' . ($post['hidden'] && $options->PjaxOption ? '' : ' href="' . $post['permalink'] . '"') . '>' . htmlspecialchars($post['title']) . '</a></li>' . "\n";
+            echo '<li><a title="查看文章' . $post['title'] . '" ' . ($post['hidden'] && $options->PjaxOption ? '' : ' href="' . $post['permalink'] . '"') . '>' . htmlspecialchars($post['title']) . '</a></li>' . "\n";
         }
     } else {
         echo '<li>暂无文章</li>' . "\n";
@@ -470,7 +470,7 @@ function Whisper($sidebar = NULL)
                 $content = UrlReplace($content);
             }
             if ($sidebar) {
-                echo $title . '<a href="'.$page['permalink'].'">'.strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . '</a>';
+                echo $title . '<a href="' . $page['permalink'] . '">' . strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . '</a>';
             } else {
                 echo $title . strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . "\n" . ($sidebar ? '<li class="more"><a href="' . $page['permalink'] . '">查看更多...</a></li>' . "\n" : '');
             }
@@ -659,7 +659,7 @@ function WordCount($content)
     $num = mb_strlen($text, 'UTF-8');
     if ($num) {
         echo $num . '字';
-    }else {
+    } else {
         echo '';
     }
 }

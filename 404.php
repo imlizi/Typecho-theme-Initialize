@@ -1,16 +1,18 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (!$this->request->isAjax() || $this->request->get('_pjax') !== '#main'):
     $this->need('header.php');
-endif;?>
+endif; ?>
     <style>
-        .post-title sub{
+        .post-title sub {
             font-size: 60%;
             color: #acacac;
         }
-        .post-content li{
+
+        .post-content li {
             padding-left: 20px;
         }
-        .post-content li a{
+
+        .post-content li a {
             font-size: 18px;
         }
     </style>
@@ -24,7 +26,7 @@ endif;?>
             <article class="post">
                 <div class="post-content">
                     <p>随便看看？也许有意想不到的收获喔？！</p>
-                    <?php Contents_Post_Initial(10,'rand()'); ?>
+                    <?php Contents_Post_Initial(10, 'rand()'); ?>
                 </div>
             </article>
         </div>

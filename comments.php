@@ -69,7 +69,8 @@ function threadedComments($comments, $options)
                             &raquo;</a></p>
                 <?php endif; ?>
                 <p <?php if (!$this->user->hasLogin()): ?>class="textarea"<?php endif; ?>>
-                    <textarea name="text" id="textarea" placeholder="加入讨论..." required><?php $this->remember('text'); ?></textarea>
+                    <textarea name="text" id="textarea" placeholder="加入讨论..."
+                              required><?php $this->remember('text'); ?></textarea>
                 </p>
                 <p <?php if (!$this->user->hasLogin()): ?>class="textbutton"<?php endif; ?>>
                     <?php if (!$this->user->hasLogin()): ?>

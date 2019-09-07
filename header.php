@@ -17,7 +17,8 @@
         ), '', ' - '); ?><?php $this->options->title();
         if ($this->is('index') && $this->options->subTitle): ?> - <?php $this->options->subTitle(); endif; ?></title>
     <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&antiSpam=&atom='); ?>
-    <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet"><link rel="stylesheet" href="<?php $this->options->themeUrl('style.css') ?>"/>
+    <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css') ?>"/>
 </head>
 <body
     class="<?php if ($_COOKIE['dark'] == '1'): ?>dark<?php endif; ?> <?php if ($this->options->HeadFixed): ?>head-fixed<?php endif; ?>">
@@ -37,7 +38,8 @@
             <?php else: ?>
                 <h1>
                     <a id="logo"
-                       href="<?php $this->options->siteUrl(); ?>"><?php if ($this->options->customTitle): $this->options->customTitle(); else: $this->options->title(); endif; ?><span class="sub"><?php $this->options->description() ?></span></a>
+                       href="<?php $this->options->siteUrl(); ?>"><?php if ($this->options->customTitle): $this->options->customTitle(); else: $this->options->title(); endif; ?>
+                        <span class="sub"><?php $this->options->description() ?></span></a>
                 </h1>
             <?php endif; ?>
         </div>
