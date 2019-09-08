@@ -1,4 +1,13 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+if ($this->request->isAjax() && $this->request->get('_pjax') === '#main'): ?>
+    <title><?php $this->archiveTitle(array(
+            'category' => _t('分类 %s 下的文章'),
+            'search' => _t('包含关键字 %s 的文章'),
+            'tag' => _t('标签 %s 下的文章'),
+            'date' => _t('在 %s 发布的文章'),
+            'author' => _t('作者 %s 发布的文章')
+        ), '', ' - '); ?><?php $this->options->title(); ?></title>
+<?php else: ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +23,7 @@
             'tag' => _t('标签 %s 下的文章'),
             'date' => _t('在 %s 发布的文章'),
             'author' => _t('作者 %s 发布的文章')
-        ), '', ' - '); ?><?php $this->options->title();
-        if ($this->is('index') && $this->options->subTitle): ?> - <?php $this->options->subTitle(); endif; ?></title>
+        ), '', ' - '); ?><?php $this->options->title(); ?></title>
     <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&antiSpam=&atom='); ?>
     <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css') ?>"/>
@@ -37,9 +45,10 @@
                 </h1>
             <?php else: ?>
                 <h1>
-                    <a id="logo"
-                       href="<?php $this->options->siteUrl(); ?>"><?php if ($this->options->customTitle): $this->options->customTitle(); else: $this->options->title(); endif; ?>
-                        <span class="sub"><?php $this->options->description() ?></span></a>
+                    <a id="logo" href="<?php $this->options->siteUrl(); ?>">
+                        <?php $this->options->title(); ?>
+                        <span class="sub"><?php $this->options->description() ?></span>
+                    </a>
                 </h1>
             <?php endif; ?>
         </div>
@@ -120,3 +129,4 @@
 </header>
 <div id="body">
     <div class="container clearfix">
+<?php endif; ?>

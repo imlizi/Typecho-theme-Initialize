@@ -121,6 +121,10 @@
                 }
             });
         }
+        
+        function sidebarAutoHeight() {
+            $("#secondary").removeAttr("style").css("height", $("#body .container").height() + "px");
+        }
 
         function cl() {
             var a = document.getElementById("catalog-col"), b = document.getElementById("catalog"),
@@ -187,6 +191,7 @@
             tooltip();
             fancybox();
             tongji();
+            sidebarAutoHeight();
         })
 
     </script>
@@ -219,6 +224,7 @@ if ($this->options->PjaxOption): ?>
             });
             tooltip();
             fancybox();
+            sidebarAutoHeight();
             tongji();
             setTimeout(function () {
                 $("#bar").remove()
@@ -455,11 +461,11 @@ if ($this->options->AjaxLoad): ?>
             };
                 <?php endif; if ($this->options->HeadFixed): ?>var d = document.getElementById("header");
             if (a > 0 && a < 30) {
-                d.style.padding = (15 - a / 2) + "px 0"
+                d.style.padding = (15 - a / 2) + "px 0";
             } else if (a >= 30) {
-                d.style.padding = 0
+                d.style.padding = 0;
             } else {
-                d.removeAttribute("style")
+                d.removeAttribute("style");
             }
                 <?php endif; if ($this->options->SidebarFixed): ?>var e = document.getElementById("main");
             var f = document.getElementById("secondary");

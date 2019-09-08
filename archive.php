@@ -1,7 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-if (!$this->request->isAjax() || $this->request->get('_pjax') !== '#main'):
-    $this->need('header.php');
-endif; ?>
+$this->need('header.php');
+?>
     <div id="main">
         <div class="main-container main">
             <header class="post-main">
@@ -24,7 +23,7 @@ endif; ?>
                     <?php $this->archiveTitle(array(
                         'category' => _t('分类 %s 下的文章'),
                         'search' => _t('包含关键字 %s 的文章'),
-                        'tag' => _t('标签 %s 下的文章'),
+                        'tag' => _t('与 %s 有关的文章'),
                         'date' => _t('在 %s 发布的文章'),
                         'author' => _t('作者 %s 发布的文章')
                     ), '', ''); ?>
@@ -74,6 +73,8 @@ endif; ?>
                     <div class="post-content">
                         <h3>没有找到内容</h3>
                         <p>你想找的东西可能被吃了(￣▽￣)~*</p>
+                        <p>随便看看？也许有意想不到的收获喔？！</p>
+                        <?php Contents_Post_Initial(10, 'rand()'); ?>
                     </div>
                 </article>
             <?php endif; ?>

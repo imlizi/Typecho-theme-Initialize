@@ -4,11 +4,9 @@
  *
  * @package custom
  */
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+$this->need('header.php');
 ?>
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-if (!$this->request->isAjax() || $this->request->get('_pjax') !== '#main'):
-    $this->need('header.php');
-endif; ?>
     <div id="main">
         <div class="main-container main">
             <header class="post-main">

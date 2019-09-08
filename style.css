@@ -1,11 +1,5 @@
-@font-face {
-    font-family: Ubuntu;
-    font-display: auto;
-    src: local('Ubuntu'), url(./fonts/ubuntu-thin.woff2) format('woff2')
-}
-
 body {
-    font: 200 87.5%/1.2 -apple-system, Ubuntu, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    font: 400 15px/1.75 -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     margin: 0;
     color: #58666e;
     background: url(images/background.png) #F7F7F7;
@@ -27,13 +21,13 @@ input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hov
 ::-webkit-scrollbar-thumb {
     box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
     background-clip: padding-box;
-    background-color: #1abc9c;
+    background-color: #3c8dbc;
     height: 32px;
 }
 
 ::selection {
     color: #FFFFFF;
-    background: #1abc9c;
+    background: #3c8dbc;
 }
 
 a, button, input[type=submit], .menu-parent a, .rewards a, #cornertool li {
@@ -46,8 +40,9 @@ a, .nav-menu ul a, .post-content .more a {
     text-decoration: none;
 }
 
-a:hover, .rewards a:hover, .tags a:hover, .comment-author a:hover, #footer .links a:hover, .icpnum:hover {
-    color: #333
+a:hover {
+    color: #333;
+    text-decoration: none;
 }
 
 ul {
@@ -180,8 +175,7 @@ button, input[type=submit] {
 #body .container {
     margin: 20px auto;
     background: #f0f3f4;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 .head-fixed .browsehappy {
@@ -194,7 +188,6 @@ button, input[type=submit] {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, .95);
     z-index: 999
 }
 
@@ -205,7 +198,11 @@ button, input[type=submit] {
 #header {
     line-height: 40px;
     padding: 15px 0;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, .2);
+    background: #3c8dbc;
+}
+
+.site-name a, .nav-menu a {
+    color: #ffffff;
 }
 
 .site-name, .comment-form p, .whisper .comment-meta time {
@@ -219,10 +216,6 @@ button, input[type=submit] {
     margin: 0;
     vertical-align: middle;
     font-weight: normal
-}
-
-#logo {
-    color: #444;
 }
 
 .post-title a {
@@ -241,10 +234,6 @@ button, input[type=submit] {
     margin-left: 20px;
 }
 
-.post-title {
-    font-weight: 200;
-}
-
 #logo img {
     display: block;
     max-height: 30px
@@ -254,7 +243,7 @@ button, input[type=submit] {
     position: relative;
     float: right;
     margin-left: 5px;
-    color: #444
+    color: #ffffff;
 }
 
 #nav-swith, #search button {
@@ -357,12 +346,13 @@ button, input[type=submit] {
     border: 0;
     border-bottom: 1px solid #999;
     border-radius: 0;
-    text-align: center
+    text-align: center;
+    color: #ffffff;
 }
 
 #search button {
     position: absolute;
-    color: #666
+    color: #ffffff;
 }
 
 .nav-menu, .comment-list, .comment-list ol {
@@ -386,14 +376,6 @@ button, input[type=submit] {
     margin: 0 10px
 }
 
-.nav-menu a {
-    color: #444
-}
-
-.nav-menu a:hover, .page-navigator a:hover {
-    border-bottom: 1px solid #444
-}
-
 .menu-parent ul {
     position: absolute;
     left: 50%;
@@ -401,7 +383,7 @@ button, input[type=submit] {
     margin: 0 0 0 -50px;
     padding: 0;
     border-radius: 5px;
-    background: rgba(238, 238, 238, .95);
+    background: #b5bbc8;
     text-align: center;
     list-style: none
 }
@@ -414,7 +396,7 @@ button, input[type=submit] {
     margin-left: -7px;
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-bottom: 7px solid rgba(238, 238, 238, .95)
+    border-bottom: 7px solid #b5bbc8
 }
 
 .menu-parent li, #cornertool li:before, .whisper .comment-list .respond, .whisper.permission .respond {
@@ -429,14 +411,14 @@ button, input[type=submit] {
 }
 
 .menu-parent .menu-parent .menu-child {
-    background: rgba(221, 221, 221, .95)
+    background: #d2d6de;
 }
 
 #bar, .loading:after {
     position: fixed;
     top: 0;
     height: 3px;
-    background: #1abc9c;
+    background: #3c8dbc;
     animation: loading 1s infinite;
     -webkit-animation: loading 1s infinite
 }
@@ -529,12 +511,18 @@ button, input[type=submit] {
 
 .post-title {
     font-size: 24px;
+    margin: 0;
+}
+
+.post-title.index{
+    margin: 10px 0;
 }
 
 .post-meta {
     padding: 0;
     color: #666;
     font-size: 12px;
+    margin: 0;
 }
 
 .post-meta li {
@@ -650,7 +638,6 @@ button, input[type=submit] {
 }
 
 .post-content, .comment-content {
-    line-height: 1.5;
     word-wrap: break-word
 }
 
@@ -734,7 +721,6 @@ button, input[type=submit] {
     margin: 2px;
     font-size: 14px;
     display: inline-block;
-    text-decoration: none;
     white-space: nowrap;
     height: 22px;
     line-height: 22px;
@@ -801,7 +787,6 @@ div.code-toolbar:before {
     height: 12px;
     left: 16px;
     top: 10px;
-    -webkit-box-shadow: 20px 0 #fdbc40, 20px 0 #35cd4b;
     box-shadow: 20px 0 #fdbc40, 20px 0 #35cd4b;
     z-index: 2;
 }
@@ -866,8 +851,8 @@ div.code-toolbar > .toolbar a {
     border: .0625rem solid #dee5e7;
     border-radius: 20px;
     background-color: #fff;
-    padding: 10px;
-    font-size: 16px;
+    padding: 4px 10px;
+    font-size: 14px;
 }
 
 .post-navigation span:first-child {
@@ -921,18 +906,33 @@ div.code-toolbar > .toolbar a {
 
 .page-navigator li {
     display: inline-block;
-    margin: 0 5px;
-    height: 24px;
-    line-height: 24px
 }
 
-.page-navigator a {
-    padding: 0 2px
+.page-navigator a, .page-navigator span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
 }
 
-.page-navigator .current a {
-    color: #444;
-    border-bottom: 1px solid #444
+.page-navigator li:first-child a, .page-navigator li:first-child span{
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.page-navigator li:last-child a, .page-navigator li:last-child span{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+.page-navigator .current a, .page-navigator a:hover {
+    background: #efefef;
 }
 
 .ajaxload li, .whisper .respond {
@@ -940,18 +940,12 @@ div.code-toolbar > .toolbar a {
 }
 
 .ajaxload .next {
-    display: block;
+    display: inline-block;
     color: #666
 }
 
 .ajaxload a {
     padding: 5px 20px;
-    border: 1px solid #666;
-    border-radius: 2px
-}
-
-.ajaxload a:hover {
-    border-color: #333
 }
 
 .ajaxload .loading, .ajaxload .loading:hover, .post-content .more .loading {
@@ -1260,8 +1254,9 @@ div.code-toolbar > .toolbar a {
     height: 40px;
     line-height: 40px;
     margin-top: 5px;
+    border-radius: 50%;
     color: #fff;
-    background: rgba(0, 0, 0, .7)
+    background: #3c8dbc
 }
 
 #top:before {
@@ -1445,6 +1440,10 @@ body.dark pre, body.dark code, body.dark input, body.dark textarea, body.dark bu
     background: #344148;
 }
 
+body.dark #cornertool li{
+    background: rgba(0,0,0,.7);
+}
+
 body.dark .author-icon {
     background: linear-gradient(135deg, transparent 30%, rgba(111, 111, 111, 0.8) 0) left, linear-gradient(-135deg, transparent 30%, rgba(111, 111, 111, 0.8) 0) right;
     background-size: 50% 100%;
@@ -1462,6 +1461,10 @@ body.dark .post-content .links li a i {
 
 body.dark .post-content .links a {
     color: #aaa;
+}
+
+body.dark .page-navigator a, body.dark .page-navigator span{
+    background: #233037;
 }
 
 body.dark blockquote {
@@ -1555,11 +1558,14 @@ body.dark .notie {
         margin: 0;
         border-top: 7px solid transparent;
         border-bottom: 7px solid transparent;
-        border-left: 7px solid rgba(221, 221, 221, .95)
+        border-left: 7px solid #d2d6de;
     }
 }
 
 @media (max-width: 1170px) {
+    #header .container{
+        padding: 0 20px;
+    }
     #catalog-col {
         right: 65px;
         margin: 0

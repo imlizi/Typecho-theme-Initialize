@@ -14,17 +14,14 @@ function themeConfig($form)
     font-size: 16px;">感谢您使用 Initial - Fly 主题</span>
     <a href="https://blog.fsky7.com/archives/52/"  target="_blank">关于&帮助</a> &nbsp;
     <a href="https://www.offodd.com/17.html" target="_blank">原作&鸣谢</a> &nbsp;
-    <code>10.0.1</code>
+    <code>1.0.1</code>
     </p>';
 
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
     $form->addInput($logoUrl);
 
-    $subTitle = new Typecho_Widget_Helper_Form_Element_Text('subTitle', NULL, NULL, _t('自定义站点副标题'), _t('浏览器副标题，仅在当前页面为首页时显示，显示格式为：<b>标题 - 副标题</b>，留空则不显示副标题'));
-    $form->addInput($subTitle);
-
-    $customTitle = new Typecho_Widget_Helper_Form_Element_Text('customTitle', NULL, NULL, _t('自定义头部站点标题'), _t('仅在页面头部标题位置显示，和Typecho后台设置的站点名称不冲突，留空则显示默认站点名称'));
-    $form->addInput($customTitle);
+    $autoThumb = new Typecho_Widget_Helper_Form_Element_Radio('autoThumb', [0=>'否', 1=>'是'], 0, _t('开始图片自动缩略图'), '首页图片自动使用缩略图,需要配合插件autoThumb');
+    $form->addInput($autoThumb);
 
     $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('Favicon 地址'), _t('在这里填入一个图片 URL 地址, 以添加一个Favicon，留空则不单独设置Favicon'));
     $form->addInput($favicon);
@@ -274,7 +271,13 @@ function postThumb($obj)
     if ($options->AttUrlReplace) {
         $thumb = UrlReplace($thumb);
     }
-    return '<img src="' . $thumb . '" />';
+
+    if ($options->autoThumb){
+        $ext = substr( $thumb , strrpos($thumb , '.')+1);
+        $thumb = $thumb . '.w300.'. $ext;
+    }
+
+    return '<img src="' . $thumb . '" / class="no-lightbox">';
 }
 
 function Postviews($archive)
@@ -688,9 +691,4 @@ function smartDateTime($time)
         }
     };
     return '';
-}
-
-function randomPost($limit = 10)
-{
-
 }

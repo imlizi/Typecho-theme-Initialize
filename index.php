@@ -1,6 +1,6 @@
 <?php
 /**
- * Initial - Imabsn
+ * Initial - Imabsn111111111
  *
  * @package Initial - Sky
  * @author <a href="http://www.offodd.com/">JIElive</a> & <a href="https://fsky7.com/">FlyingSky</a> & <a href="https://imabsn.com/">Imabsn.com</a>
@@ -8,9 +8,8 @@
  * @link https://imabsn.com
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-if (!$this->request->isAjax() || $this->request->get('_pjax') !== '#main'):
-    $this->need('header.php');
-endif; ?>
+$this->need('header.php');
+?>
     <div id="main">
         <div class="main-container">
             <?php if ($this->_currentPage == 1 && !empty($this->options->ShowWhisper) && in_array('index', $this->options->ShowWhisper)): ?>
@@ -52,10 +51,10 @@ endif; ?>
                                     </p>
                                 </form>
                             <?php else: ?>
-                                <?php if (postThumb($this)): ?>
-                                    <p class="thumb"><?php echo postThumb($this); ?></p>
+                                <?php if ($thumb = postThumb($this)): ?>
+                                    <p class="thumb"><?php echo $thumb; ?></p>
                                 <?php endif; ?>
-                                <p><?php $this->excerpt(200, ''); ?></p>
+                                <p><?php $this->excerpt(300, ''); ?></p>
                             <?php endif; ?>
                             <p class="more"><a href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">- 阅读全文
                                     -</a>
@@ -64,7 +63,7 @@ endif; ?>
                     </div>
                 </article>
             <?php endwhile; ?>
-            <?php $this->pageNav('上一页', $this->options->AjaxLoad ? '查看更多' : '下一页', 0, '..', $this->options->AjaxLoad ? array('wrapClass' => 'page-navigator ajaxload') : ''); ?>
+            <?php $this->pageNav('«', $this->options->AjaxLoad ? '查看更多' : '»', 0, '..', $this->options->AjaxLoad ? array('wrapClass' => 'page-navigator ajaxload') : ''); ?>
         </div>
     </div>
 <?php

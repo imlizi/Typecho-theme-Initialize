@@ -5,9 +5,7 @@
  * @package custom
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-if (!$this->request->isAjax() || $this->request->get('_pjax') !== '#main'):
-    $this->need('header.php');
-endif;
+$this->need('header.php');
 function threadedComments($comments, $options)
 {
     $commentClass = '';

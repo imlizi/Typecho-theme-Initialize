@@ -45,9 +45,7 @@
                 <ul class="widget-list">
                     <?php $this->widget('Widget_Comments_Recent', 'ignoreAuthor=true')->to($comments); ?>
                     <?php while ($comments->next()): ?>
-                        <li><a href="<?php $comments->permalink(); ?>"
-                               title="<?php $comments->title(); ?>"><?php $comments->author(false); ?>
-                                : <?php $comments->excerpt(35, '...'); ?></a></li>
+                        <li><a href="<?php $comments->permalink(); ?>" title="<?php $comments->title(); ?>"><?php $comments->author(false); ?>: <?php $comments->excerpt(35, '...'); ?></a></li>
                     <?php endwhile; ?>
                 </ul>
             </section>
