@@ -1,5 +1,6 @@
 body {
-    font: 400 15px/1.75 -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    /*font: 400 15px/1.75 -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;*/
+    font: 400 16px/1.75 'Hannotate SC', "PingFang SC", "Microsoft YaHei", sans-serif;
     margin: 0;
     color: #58666e;
     background: url(images/background.png) #F7F7F7;
@@ -527,9 +528,14 @@ button, input[type=submit] {
 
 .post-meta li {
     display: inline-block;
-    margin: 0 .5em .5em 0;
-    padding-left: .6em;
-    border-left: 1px solid #eee
+    margin: 0 5px;
+}
+
+.post-meta .icon-svg{
+    height: 16px;
+    width: 16px;
+    margin: -4px 5px 0 0;
+    fill: #999;
 }
 
 .post-meta li:first-child {
@@ -661,8 +667,7 @@ button, input[type=submit] {
 }
 
 .post-content a, .comment-content a {
-    color: #3354aa;
-    border-bottom: 1px solid #eee
+    color: #337ab7;
 }
 
 .post-content a:hover, .comment-content a:hover, .nav-menu ul a:hover {
@@ -1106,7 +1111,11 @@ div.code-toolbar > .toolbar a {
 }
 
 #secondary .siderbar {
-    padding: 16px;
+    padding: 10px;
+}
+
+#secondary .widget h3{
+    margin: 15px 0 5px;
 }
 
 #secondary .more {
@@ -1119,6 +1128,8 @@ div.code-toolbar > .toolbar a {
 }
 
 .widget ul {
+    margin: 0;
+    padding: 0;
     border: 1px solid rgba(0, 0, 0, .125);
     border-bottom: none;
     border-radius: 4px;
@@ -1141,10 +1152,14 @@ div.code-toolbar > .toolbar a {
     height: 40px;
     line-height: 40px;
     width: 100%;
-    text-indent: 16px;
+    /*text-indent: 16px;*/
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: pre;
+}
+
+.widget-list li a:before{
+    content: '  ';
 }
 
 .widget-list li a:hover {
@@ -1256,11 +1271,8 @@ div.code-toolbar > .toolbar a {
     margin-top: 5px;
     border-radius: 50%;
     color: #fff;
-    background: #3c8dbc
-}
-
-#top:before {
-    content: "\25b2"
+    background: #3c8dbc;
+    font-weight: 800;
 }
 
 #top:hover:before {
@@ -1374,6 +1386,44 @@ div.code-toolbar > .toolbar a {
 
 #archives li {
     margin: 5px 0
+}
+
+.post-list-page{
+    padding: 0 !important;
+}
+.post-list-page table{
+    border: none;
+    border-collapse:collapse;
+}
+.post-list-page table thead{
+    border-bottom: 2px solid #dddddd;
+    font-size: 12px;
+}
+.post-list-page .table>tbody>tr:nth-of-type(odd){
+    background: #f9f9f9;
+}
+.post-list-page tbody td{
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+.post-list-page tbody tr td:nth-child(2){
+    font-size: 14px;
+    text-align: left;
+}
+.post-list-page tbody td .badge{
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777;
+    border-radius: 10px;
 }
 
 /* Dark mode */

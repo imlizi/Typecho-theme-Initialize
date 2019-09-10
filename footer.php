@@ -46,7 +46,9 @@
     <div id="cornertool">
         <ul>
             <?php if ($this->options->scrollTop): ?>
-                <li id="top" class="hidden"></li>
+                <li id="top" class="hidden">
+                    <i class="zi zi_shangzhi"></i>
+                </li>
             <?php endif; ?>
             <?php if ($this->options->DarkMode): ?>
                 <li id="darkmode" onclick="switchDarkMode()"><?php if ($_COOKIE['dark'] == '1') {
@@ -75,7 +77,6 @@
         function tongji() {
             $.get('https://hm.baidu.com/hm.js?3151f2e3f5d1cea4df1df8450049e071', {}, {}, 'jsonp');
         }
-
         var cornertool = true;
 
         function copyCode(num) {
