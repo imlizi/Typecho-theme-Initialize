@@ -15,7 +15,7 @@ $this->need('header.php');
             <?php if ($this->_currentPage == 1 && !empty($this->options->ShowWhisper) && in_array('index', $this->options->ShowWhisper)): ?>
                 <article class="post whisper">
                     <div class="post-content">
-                        <?php Whisper(); ?>
+                        <?php echo Whisper(); ?>
                         <?php if ($this->user->pass('editor', true) && (!FindContents('page-whisper.php') || isset(FindContents('page-whisper.php')[1]))): ?>
                             <p class="notice">
                                 <b>仅管理员可见: </b><br><?php echo FindContents('page-whisper.php') ? '发现多个"轻语"模板页面，已自动选取内容最多的页面作为展示，请删除多余模板页面。' : '未找到"轻语"模板页面，请检查是否创建模板页面。' ?>

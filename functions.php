@@ -473,15 +473,15 @@ function Whisper($sidebar = NULL)
                 $content = UrlReplace($content);
             }
             if ($sidebar) {
-                echo $title . '<li><a href="' . $page['permalink'] . '">' . strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . '</a></li>';
+                return $title . '<ul class="widget-list"><li><a href="' . $page['permalink'] . '">' . strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . '</a></li></ul>';
             } else {
-                echo $title . strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . "\n" . ($sidebar ? '<li class="more"><a href="' . $page['permalink'] . '">查看更多...</a></li>' . "\n" : '');
+                return $title . strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . "\n" . ($sidebar ? '<li class="more"><a href="' . $page['permalink'] . '">查看更多...</a></li>' . "\n" : '');
             }
         } else {
-            echo $title . '<' . $p . '>暂无内容</' . $p . '>' . "\n";
+            return $title . '<' . $p . '>暂无内容</' . $p . '>' . "\n";
         }
     } else {
-        echo ($sidebar ? '' : '<h2 class="post-title"><a>轻语</a></h2>' . "\n") . '<' . $p . '>暂无内容</' . $p . '>' . "\n";
+        return ($sidebar ? '' : '<h2 class="post-title"><a>轻语</a></h2>' . "\n") . '<' . $p . '>暂无内容</' . $p . '>' . "\n";
     }
 }
 

@@ -4,7 +4,7 @@
         <?php if (!empty($this->options->ShowWhisper) && in_array('sidebar', $this->options->ShowWhisper)):$whisper = FindContents('page-whisper.php'); ?>
             <section class="widget">
                 <h3 class="widget-title"><?php echo $whisper ? FindContents('page-whisper.php', 'commentsNum', 'd')[0]['title'] : '轻语' ?></h3>
-                <?php Whisper(1); ?>
+                <?php echo Whisper(1); ?>
                 <?php if ($this->user->pass('editor', true) && (!$whisper || isset($whisper[1]))): ?>
                     <li class="notice">
                         <b>仅管理员可见: </b><br><?php echo $whisper ? '发现多个"轻语"模板页面，已自动选取内容最多的页面作为展示，请删除多余模板页面。' : '未找到"轻语"模板页面，请检查是否创建模板页面。' ?>
