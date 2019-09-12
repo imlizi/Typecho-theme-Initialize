@@ -47,7 +47,9 @@
         <ul>
             <?php if ($this->options->scrollTop): ?>
                 <li id="top" class="hidden">
-                    <i class="zi zi_shangzhi"></i>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="icon-svg">
+                        <polygon fill="#fff" points="8,4.6 1.3,11.3 2.7,12.7 8,7.4 13.3,12.7 14.7,11.3 "/>
+                    </svg>
                 </li>
             <?php endif; ?>
             <?php if ($this->options->DarkMode): ?>

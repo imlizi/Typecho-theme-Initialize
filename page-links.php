@@ -10,9 +10,9 @@ $this->need('header.php');
     <div id="main">
         <div class="main-container main">
             <header class="post-main">
-                <?php if (!empty($this->options->Breadcrumbs) && in_array('Postshow', $this->options->Breadcrumbs)): ?>
+                <?php if (!empty($this->options->Breadcrumbs)): ?>
                     <div class="breadcrumbs">
-                        <a href="<?php $this->options->siteUrl(); ?>">首页</a>&raquo; <?php if (!empty($this->options->Breadcrumbs) && in_array('Text', $this->options->Breadcrumbs)): $this->title(); ?>&nbsp;正文<?php else: $this->title(); endif; ?>
+                        <a href="<?php $this->options->siteUrl(); ?>">首页</a>&raquo;<?php $this->title();?>
                     </div>
                 <?php endif; ?>
                 <h1 class="post-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>

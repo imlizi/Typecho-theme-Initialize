@@ -658,13 +658,9 @@ function MyLinks($links)
 
 function WordCount($content)
 {
-    $text = preg_replace("/[^\x{4e00}-\x{9fa5}]/u", "", $content);
+    $text = strip_tags($content);
     $num = mb_strlen($text, 'UTF-8');
-    if ($num) {
-        echo $num . '字';
-    } else {
-        echo '';
-    }
+    return $num . '字';
 }
 
 function smartDateTime($time)

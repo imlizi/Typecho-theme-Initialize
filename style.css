@@ -1,6 +1,6 @@
 body {
     /*font: 400 15px/1.75 -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;*/
-    font: 400 16px/1.75 'Hannotate SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font: 200 16px/1.75 'Microsoft JhengHei','Hannotate SC', "PingFang SC", "Microsoft YaHei", sans-serif;
     margin: 0;
     color: #58666e;
     background: url(images/background.png) #F7F7F7;
@@ -499,7 +499,7 @@ button, input[type=submit] {
 }
 
 .post-list {
-    padding: 0 28px;
+    padding: 0 20px;
 }
 
 .post-main {
@@ -531,11 +531,18 @@ button, input[type=submit] {
     margin: 0 5px;
 }
 
-.post-meta .icon-svg{
+.post-meta .icon-svg,.postinfo .icon-svg{
     height: 16px;
     width: 16px;
     margin: -4px 5px 0 0;
     fill: #999;
+    vertical-align: middle;
+}
+
+#top .icon-svg{
+    height: 16px;
+    width: 16px;
+    fill: #ffffff;
 }
 
 .post-meta li:first-child {
@@ -1037,9 +1044,10 @@ div.code-toolbar > .toolbar a {
     height: 15px;
     line-height: 15px;
     text-align: center;
-    background: linear-gradient(135deg, transparent 30%, rgba(230, 230, 230, .8) 0) left, linear-gradient(-135deg, transparent 30%, rgba(230, 230, 230, .8) 0) right;
+    background: linear-gradient(135deg, transparent 30%, rgba(200, 200, 200, .8) 0) left no-repeat, linear-gradient(-135deg, transparent 30%, rgba(200, 200, 200, .8) 0) right no-repeat;
     background-size: 50% 100%;
-    background-repeat: no-repeat
+    color: #ff5252;
+    font-weight: bold;
 }
 
 .comment-list li .comment-reply {
@@ -1060,7 +1068,8 @@ div.code-toolbar > .toolbar a {
 
 .comment-author .avatar {
     float: left;
-    margin-right: 10px
+    margin-right: 10px;
+    border-radius: 50%;
 }
 
 .comment-author cite {
@@ -1110,12 +1119,8 @@ div.code-toolbar > .toolbar a {
     border-bottom-right-radius: 4px;
 }
 
-#secondary .siderbar {
-    padding: 10px;
-}
-
 #secondary .widget h3{
-    margin: 15px 0 5px;
+    margin: 15px 0 5px 20px;
 }
 
 #secondary .more {
@@ -1130,7 +1135,6 @@ div.code-toolbar > .toolbar a {
 .widget ul {
     margin: 0;
     padding: 0;
-    border: 1px solid rgba(0, 0, 0, .125);
     border-bottom: none;
     border-radius: 4px;
 }

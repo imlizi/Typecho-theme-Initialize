@@ -24,7 +24,11 @@ function threadedComments($comments, $options)
             <?php $comments->gravatar('32'); ?>
             <cite><?php CommentAuthor($comments); ?></cite>
             <?php if ($comments->authorId == $comments->ownerId) { ?>
-                <span class="author-icon">博主</span>
+                <?php if ($comments->authorId == 1) { ?>
+                    <span class="author-icon">博主</span>
+                <?php } else { ?>
+                    <span class="author-icon">作者</span>
+                <?php } ?>
             <?php } ?>
             <?php if ($comments->status == 'waiting') { ?>
                 <em class="comment-awaiting-moderation">您的评论正等待审核！</em>
