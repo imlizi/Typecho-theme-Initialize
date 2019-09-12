@@ -58,7 +58,7 @@ if ($this->request->isAjax() && $this->request->get('_pjax') === '#main'): ?>
         <div id="nav">
             <div id="site-search">
                 <form id="search" method="post" action="<?php $this->options->siteUrl(); ?>">
-                    <input type="text" id="s" name="s" class="text" placeholder="输入关键字搜索" required/>
+                    <input type="text" id="s" name="s" class="text" placeholder="输入+回车" required/>
                     <button type="submit"></button>
                 </form>
             </div>
