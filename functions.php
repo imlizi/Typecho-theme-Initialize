@@ -473,7 +473,7 @@ function Whisper($sidebar = NULL)
                 $content = UrlReplace($content);
             }
             if ($sidebar) {
-                return $title . '<ul class="widget-list"><li><a href="' . $page['permalink'] . '">' . strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . '</a></li></ul>';
+                return $title . '<ul class="widget-list"><li><a href="' . $page['permalink'] . '">' . strip_tags($content) . '</a></li></ul>';
             } else {
                 return $title . strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . "\n" . ($sidebar ? '<li class="more"><a href="' . $page['permalink'] . '">查看更多...</a></li>' . "\n" : '');
             }
