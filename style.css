@@ -728,6 +728,10 @@ button, input[type=submit] {
     font-weight: 400;
 }
 
+#secondary .tags-cloud{
+    padding: 10px;
+}
+
 .tags-cloud a, .widget-list.links a {
     padding: 2px;
     margin: 2px;
