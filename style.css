@@ -984,6 +984,11 @@ div.code-toolbar > .toolbar a {
     border-top: 1px solid #eee
 }
 
+#comments textarea{
+    background: url("./images/comment-back.jpg") bottom right no-repeat #fafdff;
+    background-size: contain;
+}
+
 #comments.whisper {
     margin: 20px;
 }
