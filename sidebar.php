@@ -118,10 +118,9 @@
                     <li><a href="<?php $this->options->feedUrl(); ?>" target="_blank">文章 RSS</a></li>
                     <li><a href="<?php $this->options->commentsFeedUrl(); ?>" target="_blank">评论 RSS</a></li>
                     <?php if ($this->user->hasLogin()): ?>
-                        <li><a href="<?php $this->options->adminUrl(); ?>" target="_blank">进入后台
-                                (<?php $this->user->screenName(); ?>)</a></li>
+                        <li><a href="<?php $this->options->adminUrl(); ?>" target="_blank">进入后台(<?php $this->user->screenName(); ?>)</a></li>
                         <li>
-                            <a href="<?php $this->options->logoutUrl(); ?>"<?php if ($this->options->PjaxOption): ?> no-pjax <?php endif; ?>>退出</a>
+                            <a href="<?php $this->options->logoutUrl(); ?>"<?php if ($this->options->PjaxOption): ?> no-pjax<?php endif; ?>>退出</a>
                         </li>
                     <?php endif; ?>
                 </ul>
