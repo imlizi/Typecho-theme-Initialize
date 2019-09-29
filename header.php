@@ -28,7 +28,7 @@ if ($this->request->isAjax() && $this->request->get('_pjax') === '#main'): ?>
     <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css') ?>"/>
 </head>
-<body class="<?php if ($_COOKIE['dark'] == '1'): ?>dark<?php endif; ?> <?php if ($this->options->HeadFixed): ?>head-fixed<?php endif; ?>">
+<body class="<?php if (isset($_COOKIE['dark']) && $_COOKIE['dark'] == '1'): ?>dark<?php endif; ?> <?php if ($this->options->HeadFixed): ?>head-fixed<?php endif; ?>">
 <!--[if lt IE 9]>
 <div class="browsehappy">当前网页可能 <strong>不支持</strong> 您正在使用的浏览器. 为了正常的访问, 请 <a href="https://api.i-meto.com/chrome.page">升级您的浏览器</a>.
 </div>

@@ -6,6 +6,9 @@ body {
     background: url(images/background.png) #F7F7F7;
     cursor: url("images/default.cur"), default;
     text-shadow: 0 0 4px rgba(250, 250, 250, .4);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hover {
@@ -708,6 +711,7 @@ button, input[type=submit] {
     border: 1px solid #efefef;
     border-radius: 4px;
     padding: 0 10px 10px;
+    font-size: 14px;
 }
 
 .main-container .postinfo div {
