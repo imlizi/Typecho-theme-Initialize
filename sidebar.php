@@ -88,7 +88,9 @@
             <section class="widget">
                 <h3 class="widget-title">链接</h3>
                 <div class="widget-list links">
-                    <?php Links($this->options->IndexLinksSort); ?>
+                    <ul class="widget-list">
+                        <?php Links($this->options->IndexLinksSort); ?>
+                    </ul>
                 </div>
             </section>
         <?php endif; ?>

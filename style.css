@@ -747,6 +747,11 @@ button, input[type=submit] {
     border-radius: 2px;
 }
 
+.widget-list.links a:hover{
+    color: red;
+    font-weight: bold;
+}
+
 .widget-list.links li {
     display: inline-block;
     border: none;
@@ -755,6 +760,8 @@ button, input[type=submit] {
 }
 
 .tags-cloud a {
+    font-size: 12px;
+    padding: 0 6px;
     color: #ffffff;
 }
 
