@@ -10,11 +10,9 @@ $this->need('header.php');
     <div id="main">
         <div class="main-container main">
             <header class="post-main">
-                <?php if (!empty($this->options->Breadcrumbs)): ?>
-                    <div class="breadcrumbs">
-                        <a href="<?php $this->options->siteUrl(); ?>">首页</a>&raquo;<?php $this->title();?>
-                    </div>
-                <?php endif; ?>
+                <div class="breadcrumbs">
+                    <a href="<?php $this->options->siteUrl(); ?>">首页</a>&raquo; <?php $this->title(); ?>
+                </div>
                 <h1 class="post-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
             </header>
             <article class="post">

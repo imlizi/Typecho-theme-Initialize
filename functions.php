@@ -17,14 +17,8 @@ function themeConfig($form)
     <code>1.0.1</code>
     </p>';
 
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
-    $form->addInput($logoUrl);
-
     $autoThumb = new Typecho_Widget_Helper_Form_Element_Radio('autoThumb', [0=>'否', 1=>'是'], 0, _t('开始图片自动缩略图'), '首页图片自动使用缩略图,需要配合插件autoThumb');
     $form->addInput($autoThumb);
-
-    $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('Favicon 地址'), _t('在这里填入一个图片 URL 地址, 以添加一个Favicon，留空则不单独设置Favicon'));
-    $form->addInput($favicon);
 
     $AttUrlReplace = new Typecho_Widget_Helper_Form_Element_Textarea('AttUrlReplace', NULL, NULL, _t('文章内的链接地址替换（建议用在图片等静态资源的链接上）'), _t('按照格式输入你的CDN链接以替换原链接，格式：<br><b class="notice">原地址=替换地址</b><br>原地址与新地址之间用等号“=”分隔，例如：<br><b>http://www.example.com/usr/uploads/=http://cdn.example.com/usr/uploads/</b><br>支持绝大部分有镜像功能的CDN服务，可设置多个规则，换行即可，一行一个'));
     $form->addInput($AttUrlReplace);
@@ -106,19 +100,6 @@ function themeConfig($form)
             0 => _t('关闭')),
         0, _t('浮动显示头部'), _t('默认关闭'));
     $form->addInput($HeadFixed);
-
-    $SidebarFixed = new Typecho_Widget_Helper_Form_Element_Radio('SidebarFixed',
-        array(1 => _t('启用'),
-            0 => _t('关闭')),
-        0, _t('动态显示侧边栏'), _t('默认关闭'));
-    $form->addInput($SidebarFixed);
-
-    $cjCDN = new Typecho_Widget_Helper_Form_Element_Radio('cjCDN',
-        array('bc' => _t('BootCDN'),
-            'cf' => _t('CDNJS'),
-            'jd' => _t('jsDelivr')),
-        'bc', _t('公共静态资源来源'), _t('默认BootCDN，请根据需求选择合适来源'));
-    $form->addInput($cjCDN);
 
     $GravatarUrl = new Typecho_Widget_Helper_Form_Element_Radio('GravatarUrl',
         array(false => _t('官方源'),

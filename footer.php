@@ -25,7 +25,6 @@
                         A = Math.floor(a);
                         runtime_span.innerHTML = "" + A + "天"
                     }
-
                     show_runtime();</script>
             <?php endif; ?>
             <p>
@@ -47,9 +46,7 @@
         <ul>
             <?php if ($this->options->scrollTop): ?>
                 <li id="top" class="hidden">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="icon-svg">
-                        <polygon fill="#fff" points="8,4.6 1.3,11.3 2.7,12.7 8,7.4 13.3,12.7 14.7,11.3 "/>
-                    </svg>
+                    <i class="fa fa-angle-double-up"></i>
                 </li>
             <?php endif; ?>
             <?php if ($this->options->DarkMode): ?>
@@ -68,16 +65,13 @@
         </ul>
     </div>
 <?php endif; ?>
-    <script
-        src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/jquery/2.1.4/jquery.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js<?php else: ?>cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js<?php endif; ?>"></script>
-    <script
-        src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js<?php else: ?>cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js<?php endif; ?>"></script>
-    <script
-        src="https://<?php if ($this->options->cjCDN == 'bc'): ?>cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js<?php elseif ($this->options->cjCDN == 'cf'): ?>cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js<?php else: ?>cdn.jsdelivr.net/npm/fancybox@3.0.1/dist/js/jquery.fancybox.cjs.min.js<?php endif; ?>"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script src='<?php $this->options->themeUrl('js/notie.js') ?>'></script>
     <script>
         function tongji() {
-            $.get('https://hm.baidu.com/hm.js?3151f2e3f5d1cea4df1df8450049e071', {}, {}, 'jsonp');
+            // $.get('https://hm.baidu.com/hm.js?3151f2e3f5d1cea4df1df8450049e071', {}, {}, 'jsonp');
         }
         var cornertool = true;
 
@@ -177,8 +171,9 @@
         console.log("%c 发现Bug请到留言页面给我反馈(・ω・)\n 谢谢(●￣(ｴ)￣●) " + +"", "color:#333;font-size:16px;");
         $(document).ready(function () {
             $(".post-content pre").each(function (numecode) {
-                $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
-                $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
+                $(this).attr("id", "code-" + numecode);
+                // $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
+                $(this).append('<a id="copyCode'+numecode+'" class="copy-btn" onclick="copyCode('+numecode+')">复制</a>');
             });
             var clipboardLink = new ClipboardJS("#copy-link", {
                 text: function () {

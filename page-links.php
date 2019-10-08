@@ -10,15 +10,13 @@ $this->need('header.php');
     <div id="main">
         <div class="main-container main">
             <header class="post-main">
-                <?php if (!empty($this->options->Breadcrumbs)): ?>
-                    <div class="breadcrumbs">
-                        <a href="<?php $this->options->siteUrl(); ?>">首页</a>&raquo;<?php $this->title();?>
-                    </div>
-                <?php endif; ?>
+                <div class="breadcrumbs">
+                    <a href="<?php $this->options->siteUrl(); ?>">首页</a>&raquo; <?php $this->title(); ?>
+                </div>
                 <h1 class="post-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
                 <ul class="post-meta">
-                    <li>更新于&nbsp;<?php echo smartDateTime($this->date->timeStamp); ?></li>
-                    <li><?php Postviews($this); ?></li>
+                    <li><i class="fa fa-calendar-o"></i>更新于&nbsp;<?php echo smartDateTime($this->date->timeStamp); ?></li>
+                    <li><i class="fa fa-eye"></i><?php Postviews($this); ?></li>
                 </ul>
             </header>
             <article class="post">

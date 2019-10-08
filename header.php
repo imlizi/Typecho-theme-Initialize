@@ -9,10 +9,11 @@ if ($this->request->isAjax() && $this->request->get('_pjax') === '#main'): ?>
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 <?php else: ?>
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="<?php $this->options->charset(); ?>"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name=”renderer” content=”webkit|ie-comp|ie-stand” />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <?php if ($this->options->favicon): ?>
         <link rel="shortcut icon" href="<?php $this->options->favicon(); ?>"/>
@@ -25,6 +26,7 @@ if ($this->request->isAjax() && $this->request->get('_pjax') === '#main'): ?>
             'author' => _t('作者 %s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
     <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&antiSpam=&atom='); ?>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css') ?>"/>
 </head>
