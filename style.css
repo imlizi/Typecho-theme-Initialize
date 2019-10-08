@@ -716,6 +716,10 @@ button, input[type=submit] {
     margin-top: 10px;
 }
 
+.main-container .postinfo div i{
+    padding-right: 5px;
+}
+
 #post-link {
     border-bottom: 1px dashed #cdcdcd;
     margin-right: 10px;
