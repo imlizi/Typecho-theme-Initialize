@@ -19,7 +19,7 @@ $this->need('header.php');
         <div class="main-container main">
             <header class="post-main">
                 <h1 class="post-title">
-                    404 - Not Found <sub>页面去火星旅游了！</sub>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQAQMAAADdiHD7AAAABlBMVEUAAABTU1OoaSf/AAAAAXRSTlMAQObYZgAAAFJJREFUeF7t0cENgDAMQ9FwYgxG6WjpaIzCCAxQxVggFuDiCvlLOeRdHR9yzjncHVoq3npu+wQUrUuJHylSTmBaespJyJQoObUeyxDQb3bEm5Au81c0pSCD8HYAAAAASUVORK5CYII=" class="no-lightbox" style="width: 32px;"> Sorry , Lost ! <sub>去火星了！</sub>
                 </h1>
             </header>
             <article class="post">

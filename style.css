@@ -687,7 +687,7 @@ button, input[type=submit] {
     max-width: 100%
 }
 
-.main-container .post-content img {
+.main-container .post-content.post img {
     display: block;
     margin: 0 auto;
     max-height: 320px;
