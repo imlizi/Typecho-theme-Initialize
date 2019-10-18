@@ -21,7 +21,7 @@ $this->need('header.php');
                 </ul>
             </header>
             <article class="post<?php if ($this->options->PjaxOption && $this->hidden): ?> protected<?php endif; ?>">
-                <div class="post-content post">
+                <div class="post-content">
                     <?php if ($this->options->TimeNotice): ?>
                         <?php
                         $time = time() - $this->modified;
