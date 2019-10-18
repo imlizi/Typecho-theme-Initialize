@@ -1,6 +1,6 @@
 body {
     /*font: 400 15px/1.75 -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;*/
-    font: 200 16px/1.75 'Microsoft JhengHei','Hannotate SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font: 200 16px/1.75 'Microsoft JhengHei', 'Hannotate SC', "PingFang SC", "Microsoft YaHei", sans-serif;
     margin: 0;
     color: #58666e;
     background: url(images/background.png) #F7F7F7;
@@ -422,7 +422,7 @@ button, input[type=submit] {
     position: fixed;
     top: 0;
     height: 3px;
-    background: #3c8dbc;
+    background: green;
     animation: loading 1s infinite;
     -webkit-animation: loading 1s infinite
 }
@@ -518,7 +518,7 @@ button, input[type=submit] {
     margin: 0;
 }
 
-.post-title.index{
+.post-title.index {
     margin: 10px 0;
 }
 
@@ -534,13 +534,13 @@ button, input[type=submit] {
     margin: 0 5px;
 }
 
-.post-meta i,.postinfo i{
+.post-meta i, .postinfo i {
     height: 16px;
     width: 16px;
     vertical-align: middle;
 }
 
-#top i{
+#top i {
     height: 16px;
     width: 16px;
     fill: #ffffff;
@@ -716,7 +716,7 @@ button, input[type=submit] {
     margin-top: 10px;
 }
 
-.main-container .postinfo div i{
+.main-container .postinfo div i {
     padding-right: 5px;
 }
 
@@ -734,7 +734,7 @@ button, input[type=submit] {
     font-weight: 400;
 }
 
-#secondary .tags-cloud{
+#secondary .tags-cloud {
     padding: 10px;
 }
 
@@ -749,7 +749,7 @@ button, input[type=submit] {
     border-radius: 2px;
 }
 
-.widget-list.links a:hover{
+.widget-list.links a:hover {
     color: red;
     font-weight: bold;
 }
@@ -796,7 +796,7 @@ button, input[type=submit] {
     color: #f4f6f8;
 }
 
-pre .copy-btn{
+pre .copy-btn {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -811,7 +811,7 @@ pre .copy-btn{
     padding: 2px 4px;
 }
 
-pre .copy-btn:hover{
+pre .copy-btn:hover {
     color: darkblue;
     font-weight: bold;
 }
@@ -924,12 +924,12 @@ pre .copy-btn:hover{
     border: 1px solid #ddd;
 }
 
-.page-navigator li:first-child a, .page-navigator li:first-child span{
+.page-navigator li:first-child a, .page-navigator li:first-child span {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
 
-.page-navigator li:last-child a, .page-navigator li:last-child span{
+.page-navigator li:last-child a, .page-navigator li:last-child span {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
@@ -972,7 +972,7 @@ pre .copy-btn:hover{
     border-top: 1px solid #eee
 }
 
-#comments textarea{
+#comments textarea {
     background: url("./images/comment-back.jpg") bottom right no-repeat #fafdff;
     background-size: contain;
 }
@@ -1116,7 +1116,7 @@ pre .copy-btn:hover{
     border-bottom-right-radius: 4px;
 }
 
-#secondary .widget h3{
+#secondary .widget h3 {
     margin: 15px 0 5px 20px;
 }
 
@@ -1148,7 +1148,7 @@ pre .copy-btn:hover{
     border-bottom: 1px solid #EEE;
 }
 
-.widget-list li:last-child{
+.widget-list li:last-child {
     border-bottom: none;
 }
 
@@ -1163,7 +1163,7 @@ pre .copy-btn:hover{
     white-space: pre;
 }
 
-.widget-list li a:before{
+.widget-list li a:before {
     content: '  ';
 }
 
@@ -1393,30 +1393,36 @@ pre .copy-btn:hover{
     margin: 5px 0
 }
 
-.post-list-page{
+.post-list-page {
     padding: 0 !important;
 }
-.post-list-page table{
+
+.post-list-page table {
     border: none;
-    border-collapse:collapse;
+    border-collapse: collapse;
 }
-.post-list-page table thead{
+
+.post-list-page table thead {
     border-bottom: 2px solid #dddddd;
     font-size: 12px;
 }
-.post-list-page .table>tbody>tr:nth-of-type(odd){
+
+.post-list-page .table > tbody > tr:nth-of-type(odd) {
     background: #f9f9f9;
 }
-.post-list-page tbody td{
+
+.post-list-page tbody td {
     padding: 5px;
     font-size: 12px;
     text-align: center;
 }
-.post-list-page tbody tr td:nth-child(2){
+
+.post-list-page tbody tr td:nth-child(2) {
     font-size: 14px;
     text-align: left;
 }
-.post-list-page tbody td .badge{
+
+.post-list-page tbody td .badge {
     display: inline-block;
     min-width: 10px;
     padding: 3px 7px;
@@ -1429,6 +1435,79 @@ pre .copy-btn:hover{
     vertical-align: middle;
     background-color: #777;
     border-radius: 10px;
+}
+
+#loading-wrap {
+    width: 100%;
+    height: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    opacity: 0;
+    transition: opacity ease .8s;
+    -webkit-transition: opacity ease .8s;
+    -moz-transition: opacity ease .8s;
+    -o-transition: opacity ease .8s;
+    -ms-transition: opacity ease .8s;
+}
+
+.loading {
+    width: 120px;
+    height: 120px;
+    color: #000;
+    margin: auto;
+    display: none;
+}
+
+.loading-bar {
+    width: 60px;
+    height: 30px;
+    padding-top: 45px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.loading-bar div {
+    width: 5px;
+    height: 30px;
+    margin: 25px 5px 5px;
+    background: #eee;
+    float: left;
+}
+
+.bar1, .bar2, .bar3, .bar4 {
+    animation: bar 1.5s infinite;
+    -webkit-animation: bar 1.5s infinite;
+    -moz-animation: bar 1.5s infinite;
+    -o-animation: bar 1.5s infinite;
+}
+
+.bar2 {
+    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+    -o-animation-delay: 0.3s;
+}
+
+.bar3 {
+    animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    -o-animation-delay: 0.6s;
+}
+
+.bar4 {
+    animation-delay: 0.9s;
+    -webkit-animation-delay: 0.9s;
+    -moz-animation-delay: 0.9s;
+    -o-animation-delay: 0.9s;
+}
+.loading-text {
+    text-align: center;
+    margin-top: 8px;
 }
 
 /* Dark mode */
@@ -1495,8 +1574,8 @@ body.dark pre, body.dark code, body.dark input, body.dark textarea, body.dark bu
     background: #344148;
 }
 
-body.dark #cornertool li{
-    background: rgba(0,0,0,.7);
+body.dark #cornertool li {
+    background: rgba(0, 0, 0, .7);
 }
 
 body.dark .author-icon {
@@ -1518,7 +1597,7 @@ body.dark .post-content .links a {
     color: #aaa;
 }
 
-body.dark .page-navigator a, body.dark .page-navigator span{
+body.dark .page-navigator a, body.dark .page-navigator span {
     background: #233037;
 }
 
@@ -1618,9 +1697,10 @@ body.dark .notie {
 }
 
 @media (max-width: 1170px) {
-    #header .container{
+    #header .container {
         padding: 0 20px;
     }
+
     #catalog-col {
         right: 65px;
         margin: 0

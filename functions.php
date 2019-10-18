@@ -459,7 +459,7 @@ function Whisper($sidebar = NULL)
                 return $title . strip_tags($content, '<p><br><strong><a><img><pre><code>' . $options->commentsHTMLTagAllowed) . "\n" . ($sidebar ? '<li class="more"><a href="' . $page['permalink'] . '">查看更多...</a></li>' . "\n" : '');
             }
         } else {
-            return $title . '<' . $p . '>暂无内容</' . $p . '>' . "\n";
+            return $title . '<ul class="widget-list"><' . $p . '>&nbsp;&nbsp;暂无内容</' . $p . '></ul>';
         }
     } else {
         return ($sidebar ? '' : '<h2 class="post-title"><a>轻语</a></h2>' . "\n") . '<' . $p . '>暂无内容</' . $p . '>' . "\n";

@@ -64,6 +64,17 @@
             <?php endif; ?>
         </ul>
     </div>
+    <div id="loading-wrap">
+        <div class="loading">
+            <div class="loading-bar">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div class="bar4"></div>
+            </div>
+            <div class="loading-text">loading</div>
+        </div>
+    </div>
 <?php endif; ?>
     <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
@@ -214,8 +225,12 @@ if ($this->options->PjaxOption): ?>
         }).on('submit', 'form[id=search], form[id=comment-form]', function (event) {
             $.pjax.submit(event, {container: '#main', fragment: '#main', timeout: 10000})
         }).on('pjax:send', function () {
-            $("#header").prepend("<div id='bar'></div>")
+            $("#header").prepend("<div id='bar'></div>");
+            $("#loading-wrap").css("opacity", 1).css("height", "100%");
+            $("#loading-wrap .loading").show();
         }).on('pjax:complete', function () {
+            $("#loading-wrap").css("opacity", 0).css("height", 0);
+            $("#loading-wrap .loading").hide();
             $(".post-content pre").each(function (numecode) {
                 $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
                 $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
