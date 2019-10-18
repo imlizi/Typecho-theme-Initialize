@@ -967,9 +967,8 @@ pre .copy-btn:hover {
 }
 
 #comments {
-    margin: 30px 0;
     border-top: 1px solid #eee;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 #comments textarea {

@@ -231,9 +231,14 @@ if ($this->options->PjaxOption): ?>
         }).on('pjax:complete', function () {
             $("#loading-wrap").css("opacity", 0).css("height", 0);
             $("#loading-wrap .loading").hide();
+            // $(".post-content pre").each(function (numecode) {
+            //     $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
+            //     $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
+            // });
             $(".post-content pre").each(function (numecode) {
-                $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
-                $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
+                $(this).attr("id", "code-" + numecode);
+                // $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
+                $(this).append('<a id="copyCode'+numecode+'" class="copy-btn" onclick="copyCode('+numecode+')">复制</a>');
             });
             tooltip();
             fancybox();
