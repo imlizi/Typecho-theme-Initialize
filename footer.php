@@ -129,7 +129,7 @@
                 }
             });
         }
-        
+
         function sidebarAutoHeight() {
             $("#secondary").removeAttr("style").css("height", $("#body .container").height() + "px");
         }
@@ -231,25 +231,20 @@ if ($this->options->PjaxOption): ?>
         }).on('pjax:complete', function () {
             $("#loading-wrap").css("opacity", 0).css("height", 0);
             $("#loading-wrap .loading").hide();
-            // $(".post-content pre").each(function (numecode) {
-            //     $(this).wrap('<div class="code-toolbar"></div>').attr("id", "code-" + numecode);
-            //     $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
-            // });
             $(".post-content pre").each(function (numecode) {
                 $(this).attr("id", "code-" + numecode);
-                // $(this).parent("div").append('<div class="toolbar"><div class="toolbar-item"><a id="copyCode' + numecode + '" onclick="copyCode(' + numecode + ')">复制</a></div></div>');
                 $(this).append('<a id="copyCode'+numecode+'" class="copy-btn" onclick="copyCode('+numecode+')">复制</a>');
             });
             tooltip();
             fancybox();
-            sidebarAutoHeight();
             tongji();
             setTimeout(function () {
                 $("#bar").remove()
             }, 300);
             $('#header').removeClass("on");
             $('#s').val("");
-            <?php if ($this->options->SidebarFixed): ?>$("#secondary").removeAttr("style");<?php endif; ?>}).on('pjax:end', function () {
+            <?php if ($this->options->SidebarFixed): ?>$("#secondary").removeAttr("style");<?php endif; ?>
+        }).on('pjax:end', function () {
             <?php if ($this->options->AjaxLoad): ?>al();
             <?php endif; ?>cl();
             ac();
@@ -259,7 +254,9 @@ if ($this->options->PjaxOption): ?>
             }
             if (typeof ga !== 'undefined') {
                 ga('send', 'pageview', location.pathname + location.search)
-            }<?php endif; ?>});
+            }<?php endif; ?>
+            sidebarAutoHeight();
+        });
 
         function ac() {
             $body = $('html,body');

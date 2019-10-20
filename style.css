@@ -1,6 +1,5 @@
 body {
-    /*font: 400 15px/1.75 -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;*/
-    font: 200 16px/1.75 'Microsoft JhengHei', 'Hannotate SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font: 200 16px/1.75 sans-serif;
     margin: 0;
     color: #58666e;
     background: url(images/background.png) #F7F7F7;
@@ -202,6 +201,7 @@ button, input[type=submit] {
     line-height: 40px;
     padding: 15px 0;
     background: #3c8dbc;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 .site-name a, .nav-menu a {
@@ -491,15 +491,17 @@ button, input[type=submit] {
         transform: translateY(0)
     }
 }
-
+.post-list .post{
+    padding: 0 20px;
+    max-height: 248px;
+    overflow: hidden;
+    opacity: .8;
+    border-radius: 4px;
+}
 .post {
     background: #fefefe;
     margin: 20px;
     padding-bottom: 10px;
-}
-
-.post-list {
-    padding: 0 20px;
 }
 
 .post-main {
@@ -966,7 +968,7 @@ pre .copy-btn:hover {
 
 #comments {
     border-top: 1px solid #eee;
-    padding: 0 20px;
+    padding: 0 20px 20px;
 }
 
 #comments textarea {

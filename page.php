@@ -19,15 +19,14 @@ $this->need('header.php');
             </header>
             <article class="post<?php if ($this->options->PjaxOption && $this->hidden): ?> protected<?php endif; ?>">
                 <div class="post-content">
-                    <?php if ($this->options->TimeNotice): ?>
-                        <?php
+                    <?php if ($this->options->TimeNotice):
                         $time = time() - $this->modified;
                         $lock = $this->options->TimeNoticeLock;
                         $lock = $lock * 24 * 60 * 60;
                         if ($time >= $lock) {
-                            ?>
+                    ?>
                             <script defer>
-                                <?php if ($_GET['_pjax']) { ?>
+                                <?php if (isset($_GET['_pjax'])) { ?>
                                 notie('此文章最后修订于 <?php echo date('Y年m月d日', $this->modified);?>，其中的信息可能已经有所发展或是发生改变。', {
                                     type: 'warning',
                                     autoHide: true,
